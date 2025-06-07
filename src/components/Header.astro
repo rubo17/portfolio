@@ -1,0 +1,83 @@
+---
+import Cerrar from "@components/icons/Cerrar.astro";
+import Maximizar from "@components/icons/Maximizar.astro";
+import Minimizar from "@components/icons/Minimizar.astro";
+import PantallaMode1 from "@components/icons/PantallaMode1.astro";
+import PantallaMode2 from "@components/icons/PantallaMode2.astro";
+import PantallaMode3 from "@components/icons/PantallaMode3.astro";
+const items: { title: string; href?: string }[] = [
+  { title: "File" },
+  { title: "Edit" },
+  { title: "Selection"},
+  { title: "View"},
+  { title: "Go"},
+  { title: "Run"},
+  { title: "Go"},
+  { title: "Help"},
+];
+---
+<header class="bg-[#1F1F1F] sticky top-0 z-50 text-[#C4C8D1] h-12">
+  <!-- Logo fijo a la izquierda, centrado verticalmente -->
+  <a
+    class="absolute top-1/2 left-4 -translate-y-1/2 cursor-pointer"
+    href="https://code.visualstudio.com/docs"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="VSCode Docs"
+  >
+    <img
+      src="/visualLogo.webp"
+      alt="Logo"
+      class="w-6 h-6 object-contain hover:scale-105 transition-transform"
+    />
+  </a>
+  <div class="flex justify-between items-center h-full ml-15">
+    <nav class="opacity-0 md:opacity-100">
+      <ul class="flex gap-2 text-sm">
+        {items.map(({ title, href }) => (
+          <li>
+            <a
+              class="hover:bg-gray-700 rounded px-3 py-1 transition-colors duration-200"
+              href={href ?? '#'}
+            >
+              {title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-medium ">
+        Portfolio Personal - España
+     </div>
+    <div class="flex gap-5 items-center">
+      <!-- Botones PantallaMode (solo visibles desde sm en adelante) -->
+      <div class="opacity-0 sm:opacity-100 flex flex-row gap-1">
+        <button class="hover:bg-gray-700 p-1 rounded-md"><PantallaMode1 /></button>
+        <button class="hover:bg-gray-700 p-1 rounded-md"><PantallaMode2 /></button>
+        <button class="hover:bg-gray-700 p-1 rounded-md"><PantallaMode3 /></button>
+      </div>
+    <div class="flex flex-row h-full items-stretch">
+        <div
+          class="w-[3rem] h-[3rem] hover:bg-gray-700 hidden sm:flex justify-center items-center transition-[background] duration-200 ease-linear"
+        >
+          <Minimizar class="" />
+        </div>
+
+        <div
+          class="w-[3rem] h-[3rem] hover:bg-gray-700 hidden sm:flex justify-center items-center transition-[background] duration-200 ease-linear"
+        >
+          <Maximizar class="" />
+        </div>
+
+        <div
+          class="w-[3rem] h-[3rem] hover:bg-red-600 group flex justify-center items-center transition-[background] duration-200 ease-linear"
+        >
+          <Cerrar class="group-hover:text-white" />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
