@@ -1,3 +1,11 @@
+---
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import MenuTabs from "@components/MenuTabs.astro";
+import SideBar from "@components/SideBar.astro";
+import "@styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,9 +15,21 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
-		<slot />
-	</body>
+<body class="min-h-screen flex flex-col text-[#C4C8D1]">
+  <Header />
+
+  <main class="flex-1">
+    <div class="flex w-full h-full">
+      <SideBar />
+      <div class="flex flex-col flex-1 w-full">
+        <MenuTabs />
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</body>
 </html>
 
 <style>

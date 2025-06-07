@@ -1,0 +1,66 @@
+---
+import AccountsIcon from "./icons/AccountsIcon.astro";
+import DebugIcon from "./icons/DebugIcon.astro";
+import ExplorerIcon from "./icons/ExplorerIcon.astro";
+import ExtensionsIcon from "./icons/ExtensionsIcon.astro";
+import ManageIcon from "./icons/ManageIcon.astro";
+import SearchIcon from "./icons/SearchIcon.astro";
+import SourceControlIcon from "./icons/SourceControlIcon.astro";
+---
+<aside
+    class="relative w-[54px] bg-[#1F1F1F] h-full flex flex-col items-center justify-between"
+>
+    <div class="flex flex-col h-auto w-full">
+        <button
+            data-tooltip="Explorer (Ctrl+Shift+E)"
+            data-flow="right"
+            class="relative flex items-center justify-center w-[54px] h-[54px] active"
+        >
+            <ExplorerIcon />
+        </button>
+        <button
+            data-tooltip="Search (Ctrl+Shift+F)"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <SearchIcon />
+        </button>
+        <button
+            data-tooltip="Source Control (Ctrl+Shift+G)"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <SourceControlIcon />
+        </button>
+        <button
+            data-tooltip="Run and Debug (Ctrl+Shift+D)"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <DebugIcon />
+        </button>
+        <button
+            data-tooltip="Extensions (Ctrl+Shift+X)"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <ExtensionsIcon />
+        </button>
+    </div>
+    <div class="flex flex-col h-auto">
+        <button
+            data-tooltip="Accounts"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <AccountsIcon />
+        </button>
+        <button
+            data-tooltip="Manage"
+            data-flow="right"
+            class="flex items-center justify-center w-[54px] h-[54px] group"
+        >
+            <ManageIcon />
+        </button>
+    </div>
+</aside>
