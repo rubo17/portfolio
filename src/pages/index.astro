@@ -1,13 +1,395 @@
 ---
-import '@styles/global.css';
-import Layout from '../layouts/Layout.astro';
+import SocialNetworks from "@components/SocialNetworks.astro";
+import "@styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+
 <Layout>
-    <section class="h-full w-full bg-black/95">
-        <h1 class="text-xl">About me</h1>
+    <section class="relative @container bg-[#1F1F1F] p-10 h-full">
+        <div class="max-w-7xl relative h-full flex flex-row gap-10 items-center mx-auto">
+            <div class="flex-1 flex flex-col gap-6 ">
+                <div class="flex flex-row gap-5 items-center">
+                    <figure class="neko-banner">
+                        <img
+                            src="/careto.jpg"
+                            alt="Nicolas Esteban"
+                            width="512"
+                            height="521"
+                            loading="lazy"
+                            decoding="async"
+                            class="size-16 @xl:size-20 rounded-full"
+                        />
+                    </figure>
+                    <a
+                        href="https://www.linkedin.com/in/nicolas-sebastian-esteban-garc%C3%ADa-b5511728a/"
+                        target="_blank"
+                        role="link"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin"
+                        class="flex items-center transition-transform duration-300 ease-in-out h-max"
+                    >
+                        <div class="flex items-center">
+                            <span
+                                class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+                            >
+                                <span
+                                    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,hsl(var(--active-bg))_0%,hsl(var(--active-bg))_50%,hsl(var(--highlight))_100%)]"
+                                ></span>
+                                <div
+                                    class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-highlight bg-dark_border/85 rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap"
+                                >
+                                    <span
+                                        class="text-[#fffc] tracking-wide text-sm @2xl:text-base"
+                                        >Disponible para trabajar</span
+                                    >
+                                </div>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <p class="text-3xl text-main @xl:text-4xl">
+                        Hola, soy <strong class="gradient-text"
+                            >Ruben Cabrerizo Espinosa</strong
+                        >
+                    </p>
+                    <div class="items-center w-max flex typing-container">
+                        <strong
+                            class="font-mono mr-1.5 -mb-[-1px] text-2xl @xl:text-3xl text-main"
+                            >&lt;</strong
+                        >
+                        <p
+                            aria-label="Hi! I'm a developer"
+                            class="text-xl @xl:text-2xl text-main font-mono"
+                        >
+                            <span class="typewriter"></span>
+                        </p>
+                        <strong
+                            class="font-mono ml-1.5 text-2xl @xl:text-3xl text-main"
+                            >/&gt;</strong
+                        >
+                    </div>
+                    <p
+                        class="leading-relaxed max-w-4xl"
+                    >
+¡Hola! Soy Ruben Cabrerizo, desarrollador web recién titulado en DAW (Desarrollo de Aplicaciones Web). Me apasiona crear soluciones digitales útiles, rápidas y bien diseñadas. He desarrollado proyectos completos desde cero, tanto a nivel frontend como backend, y recientemente he presentado mi TFG: una plataforma web de nutrición y fitness con tienda online, contenido premium, sistema de suscripciones y gestión de usuarios.
+                    </p>
+                    <div class="flex flex-row gap-4">
+                        <a
+                            href="mailto:nick2000.1985@gmail.com"
+                            target="_blank"
+                            role="link"
+                            rel="noopener noreferrer"
+                            aria-label="Contact me"
+                            class="group cursor-pointer flex items-center justify-center bg-dark_bg
+          px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 transition-all duration-200 ease-linear
+          border-[#4b556380] border-[1px]"
+                        >
+                            <figure
+                                class="fill-main group-hover:fill-dark_border"
+                            >
+                                <svg
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                    ><path
+                                        d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                                    ></path></svg
+                                >
+                            </figure>
+                            <span
+                                class="text-main text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
+                            >
+                                Contáctame<span class="hidden @sm:inline"
+                                ></span>
+                            </span>
+                        </a>
+                        <a
+                            href="/docs/cv-nicolas.pdf"
+                            download=""
+                            aria-label="Download CV"
+                            class="group cursor-pointer flex items-center justify-center bg-dark_bg
+              px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 transition-all duration-200 ease-linear
+              border-[rgb(75,85,99,0.5)] border-[1px]"
+                        >
+                            <figure
+                                class="fill-main group-hover:fill-dark_border"
+                            >
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 384 512"
+                                    ><path
+                                        d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM216 232l0 102.1 31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31L168 232c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+                                    ></path></svg
+                                >
+                            </figure>
+                            <span
+                                class="text-main text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
+                                ><span class="hidden @sm:inline">Descargar</span
+                                > CV</span
+                            >
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <SocialNetworks />
+        </div>
+        <div class="scroll-down h-max"><span></span> <span></span></div>
     </section>
-</Layout> 
+</Layout>
+
+<style>
+    a[aria-label="Linkedin"]:hover {
+        transform: scale(1.03);
+    }
+
+    a[aria-label="Linkedin"] {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .text-base {
+        transition: none;
+    }
+    .typing-container {
+        display: none;
+    }
+
+    @media (min-height: 40rem) {
+        .typing-container {
+            display: flex;
+        }
+    }
+
+    @keyframes typing {
+        /* Software Developer */
+        0.0000%,
+        50% {
+            content: "";
+        }
+        1.1395%,
+        48.8605% {
+            content: "S";
+        }
+        2.2791%,
+        47.7209% {
+            content: "So";
+        }
+        3.4186%,
+        46.5814% {
+            content: "Sof";
+        }
+        4.5581%,
+        45.4419% {
+            content: "Soft";
+        }
+        5.6977%,
+        44.3023% {
+            content: "Softw";
+        }
+        6.8372%,
+        43.1628% {
+            content: "Softwa";
+        }
+        7.9767%,
+        42.0233% {
+            content: "Software";
+        }
+        9.1163%,
+        40.8837% {
+            content: "Software D";
+        }
+        10.2558%,
+        39.7442% {
+            content: "Software De";
+        }
+        11.3953%,
+        38.6047% {
+            content: "Software Dev";
+        }
+        12.5349%,
+        37.4651% {
+            content: "Software Deve";
+        }
+        13.6744%,
+        36.3256% {
+            content: "Software Devel";
+        }
+        14.8140%,
+        35.1860% {
+            content: "Software Develo";
+        }
+        15.9535%,
+        34.0465% {
+            content: "Software Develop";
+        }
+        17.0930%,
+        32.9070% {
+            content: "Software Develope";
+        }
+        18.2326%,
+        31.7674% {
+            content: "Software Developer";
+        }
+
+        /* Frontend Junior */
+        50%,
+        100% {
+            content: "";
+        }
+        51.1395%,
+        98.8605% {
+            content: "F";
+        }
+        52.2791%,
+        97.7209% {
+            content: "Fr";
+        }
+        53.4186%,
+        96.5814% {
+            content: "Fro";
+        }
+        54.5581%,
+        95.4419% {
+            content: "Fron";
+        }
+        55.6977%,
+        94.3023% {
+            content: "Front";
+        }
+        56.8372%,
+        93.1628% {
+            content: "Fronte";
+        }
+        57.9767%,
+        92.0233% {
+            content: "Fronten";
+        }
+        59.1163%,
+        90.8837% {
+            content: "Frontend";
+        }
+        60.2558%,
+        89.7442% {
+            content: "Frontend J";
+        }
+        61.3953%,
+        88.6047% {
+            content: "Frontend Ju";
+        }
+        62.5349%,
+        87.4651% {
+            content: "Frontend Jun";
+        }
+        63.6744%,
+        86.3256% {
+            content: "Frontend Juni";
+        }
+        64.8140%,
+        85.1860% {
+            content: "Frontend Junio";
+        }
+        65.9535%,
+        84.0465% {
+            content: "Frontend Junior";
+        }
+    }
+
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .typewriter {
+        --caret: currentcolor;
+    }
+
+    .typewriter::before {
+        content: "";
+        animation: typing 12s infinite;
+    }
+
+    .typewriter::after {
+        content: "";
+        border-right: 1px solid var(--caret);
+        animation: blink 0.5s linear infinite;
+    }
+
+    .typewriter.thick::after {
+        border-right: 1ch solid var(--caret);
+    }
+
+    .typewriter.nocaret::after {
+        border-right: 0;
+    }
+
+    @media (prefers-reduced-motion) {
+        .typewriter::after {
+            animation: none;
+        }
+
+        @keyframes sequencePopup {
+            0%,
+            100% {
+                content: "Software Developer";
+            }
+            50% {
+                content: "Frontend Junior";
+            }
+        }
+
+        .typewriter::before {
+            content: "Software Developer";
+            animation: sequencePopup 12s linear infinite;
+        }
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scroll-down span {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(45deg);
+        animation: scroll-down 1.5s infinite;
+    }
+
+    .scroll-down span:nth-child(1) {
+        animation-delay: -0.2s;
+    }
+
+    .scroll-down span:nth-child(2) {
+        animation-delay: -0.4s;
+    }
+
+    @keyframes scroll-down {
+        0% {
+            opacity: 0;
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+    }
+</style>

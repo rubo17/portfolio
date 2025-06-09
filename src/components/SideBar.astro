@@ -6,61 +6,65 @@ import ExtensionsIcon from "./icons/ExtensionsIcon.astro";
 import ManageIcon from "./icons/ManageIcon.astro";
 import SearchIcon from "./icons/SearchIcon.astro";
 import SourceControlIcon from "./icons/SourceControlIcon.astro";
+
+const mainButtons = [
+  {
+    icon: ExplorerIcon,
+    tooltip: "Explorer (Ctrl+Shift+E)",
+    active: true,
+  },
+  {
+    icon: SearchIcon,
+    tooltip: "Search (Ctrl+Shift+F)",
+  },
+  {
+    icon: SourceControlIcon,
+    tooltip: "Source Control (Ctrl+Shift+G)",
+  },
+  {
+    icon: DebugIcon,
+    tooltip: "Run and Debug (Ctrl+Shift+D)",
+  },
+  {
+    icon: ExtensionsIcon,
+    tooltip: "Extensions (Ctrl+Shift+X)",
+  },
+];
+
+const bottomButtons = [
+  {
+    icon: AccountsIcon,
+    tooltip: "Accounts",
+  },
+  {
+    icon: ManageIcon,
+    tooltip: "Manage",
+  },
+];
 ---
 <aside
-    class="relative w-[54px] bg-[#1F1F1F] h-full flex flex-col items-center justify-between"
+    class="relative w-[54px] bg-[#181818] h-full flex flex-col items-center justify-between"
 >
     <div class="flex flex-col h-auto w-full">
-        <button
-            data-tooltip="Explorer (Ctrl+Shift+E)"
-            data-flow="right"
-            class="relative flex items-center justify-center w-[54px] h-[54px] active"
-        >
-            <ExplorerIcon />
-        </button>
-        <button
-            data-tooltip="Search (Ctrl+Shift+F)"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <SearchIcon />
-        </button>
-        <button
-            data-tooltip="Source Control (Ctrl+Shift+G)"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <SourceControlIcon />
-        </button>
-        <button
-            data-tooltip="Run and Debug (Ctrl+Shift+D)"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <DebugIcon />
-        </button>
-        <button
-            data-tooltip="Extensions (Ctrl+Shift+X)"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <ExtensionsIcon />
-        </button>
+        {mainButtons.map(({ icon: Icon, tooltip, active }) => (
+            <button
+                data-tooltip={tooltip}
+                data-flow="right"
+                class={`flex cursor-pointer items-center justify-center w-[54px] h-[54px] group${active ? ' active' : ''}`}
+            >
+                <Icon />
+            </button>
+        ))}
     </div>
     <div class="flex flex-col h-auto">
-        <button
-            data-tooltip="Accounts"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <AccountsIcon />
-        </button>
-        <button
-            data-tooltip="Manage"
-            data-flow="right"
-            class="flex items-center justify-center w-[54px] h-[54px] group"
-        >
-            <ManageIcon />
-        </button>
+        {bottomButtons.map(({ icon: Icon, tooltip }) => (
+            <button
+                data-tooltip={tooltip}
+                data-flow="right"
+                class="cursor-pointer flex items-center justify-center w-[54px] h-[54px] group"
+            >
+                <Icon />
+            </button>
+        ))}
     </div>
 </aside>
