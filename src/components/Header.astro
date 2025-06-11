@@ -16,7 +16,7 @@ const items: { title: string; href?: string }[] = [
   { title: "Help"},
 ];
 ---
-<header class="bg-[#181818] sticky top-0 z-50 text-[#C4C8D1] h-12">
+<header class="bg-main sticky top-0 z-50 text-primaryText h-12">
   <!-- Logo fijo a la izquierda, centrado verticalmente -->
   <a
     class="absolute top-1/2 left-4 -translate-y-1/2 cursor-pointer"
@@ -31,7 +31,7 @@ const items: { title: string; href?: string }[] = [
       class="w-6 h-6 object-contain hover:scale-105 transition-transform"
     />
   </a>
-  <div class="flex justify-between items-center h-full ml-15">
+  <div class="ml-20 flex justify-between items-center h-full ml-15">
     <nav class="opacity-0 md:opacity-100">
       <ul class="flex gap-2 text-sm">
         {items.map(({ title, href }) => (

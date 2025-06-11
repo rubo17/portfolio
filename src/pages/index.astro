@@ -13,17 +13,13 @@ import Layout from "../layouts/Layout.astro";
         <div class="max-w-7xl relative h-full flex flex-row gap-10 items-center mx-auto">
             <div class="flex-1 flex flex-col gap-6 ">
                 <div class="flex flex-row gap-5 items-center">
-                    <figure class="neko-banner">
-                        <img
-                            src="/careto.jpg"
-                            alt="Nicolas Esteban"
-                            width="512"
-                            height="521"
-                            loading="lazy"
-                            decoding="async"
-                            class="size-16 @xl:size-20 rounded-full"
-                        />
-                    </figure>
+                    <img
+                        src="/careto.jpg"
+                        alt="Ruben Cabrerizo Espinosa"
+                        loading="lazy"
+                        decoding="async"
+                        class="w-24 h-24 rounded-full object-cover"
+                    />
                     <a
                         href="https://www.linkedin.com/in/nicolas-sebastian-esteban-garc%C3%ADa-b5511728a/"
                         target="_blank"
@@ -33,50 +29,41 @@ import Layout from "../layouts/Layout.astro";
                         class="flex items-center transition-transform duration-300 ease-in-out h-max"
                     >
                         <div class="flex items-center">
-                            <span
-                                class="relative inline-flex overflow-hidden rounded-full p-[1px]"
-                            >
-                                <span
-                                    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,hsl(var(--active-bg))_0%,hsl(var(--active-bg))_50%,hsl(var(--highlight))_100%)]"
-                                ></span>
-                                <div
-                                    class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-highlight bg-dark_border/85 rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap"
-                                >
-                                    <span
-                                        class="text-[#fffc] tracking-wide text-sm @2xl:text-base"
-                                        >Disponible para trabajar</span
-                                    >
-                                </div>
-                            </span>
+                          <span class="relative inline-flex overflow-hidden rounded-full p-[1.5px]">
+                            <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,theme(colors.accent)_0%,theme(colors.accent)_50%,theme(colors.surface)_100%)]"></span>
+                            <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-accent bg-surface rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap border border-accent/30 shadow-md">
+                              <span class="text-primaryText tracking-wide text-sm xl:text-base">Disponible para trabajar</span>
+                            </div>
+                          </span>
                         </div>
                     </a>
                 </div>
                 <div class="flex flex-col gap-6">
-                    <p class="text-3xl text-main @xl:text-4xl">
-                        Hola, soy <strong class="gradient-text"
+                    <p class="text-3xl  @xl:text-4xl">
+                        Hola, soy <strong class="gradient-text text-accent"
                             >Ruben Cabrerizo Espinosa</strong
                         >
                     </p>
                     <div class="items-center w-max flex typing-container">
                         <strong
-                            class="font-mono mr-1.5 -mb-[-1px] text-2xl @xl:text-3xl text-main"
+                            class="font-mono mr-1.5 -mb-[-1px] text-2xl @xl:text-3xl"
                             >&lt;</strong
                         >
                         <p
                             aria-label="Hi! I'm a developer"
-                            class="text-xl @xl:text-2xl text-main font-mono"
+                            class="text-xl @xl:text-2xl font-mono"
                         >
                             <span class="typewriter"></span>
                         </p>
                         <strong
-                            class="font-mono ml-1.5 text-2xl @xl:text-3xl text-main"
+                            class="font-mono ml-1.5 text-2xl @xl:text-3xl"
                             >/&gt;</strong
                         >
                     </div>
                     <p
                         class="leading-relaxed max-w-4xl"
                     >
-¡Hola! Soy Ruben Cabrerizo, desarrollador web recién titulado en DAW (Desarrollo de Aplicaciones Web). Me apasiona crear soluciones digitales útiles, rápidas y bien diseñadas. He desarrollado proyectos completos desde cero, tanto a nivel frontend como backend, y recientemente he presentado mi TFG: una plataforma web de nutrición y fitness con tienda online, contenido premium, sistema de suscripciones y gestión de usuarios.
+                        ¡Hola! Soy Ruben Cabrerizo, desarrollador web recién titulado en DAW (Desarrollo de Aplicaciones Web). Me apasiona crear soluciones digitales útiles, rápidas y bien diseñadas. He desarrollado proyectos completos desde cero, tanto a nivel frontend como backend, y recientemente he presentado mi TFG: una plataforma web de nutrición y fitness con tienda online, contenido premium, sistema de suscripciones y gestión de usuarios.
                     </p>
                     <div class="flex flex-row gap-4">
                         <a
@@ -86,11 +73,11 @@ import Layout from "../layouts/Layout.astro";
                             rel="noopener noreferrer"
                             aria-label="Contact me"
                             class="group cursor-pointer flex items-center justify-center bg-dark_bg
-          px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 transition-all duration-200 ease-linear
-          border-[#4b556380] border-[1px]"
+          px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 hover:text-main transition-all duration-200 ease-linear
+          border-[#4b556380] border-[1px] bg-main"
                         >
                             <figure
-                                class="fill-main group-hover:fill-dark_border"
+                                class=" fill-primaryText group-hover:fill-main"
                             >
                                 <svg
                                     width="18"
@@ -102,22 +89,22 @@ import Layout from "../layouts/Layout.astro";
                                 >
                             </figure>
                             <span
-                                class="text-main text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
+                                class="text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
                             >
                                 Contáctame<span class="hidden @sm:inline"
                                 ></span>
                             </span>
                         </a>
                         <a
-                            href="/docs/cv-nicolas.pdf"
+                            href="/cvRubenCabrerizo.pdf"
                             download=""
                             aria-label="Download CV"
                             class="group cursor-pointer flex items-center justify-center bg-dark_bg
-              px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 transition-all duration-200 ease-linear
-              border-[rgb(75,85,99,0.5)] border-[1px]"
+              px-4 py-2 rounded-xl gap-3 outline-none hover:bg-gray-200 hover:text-main transition-all duration-200 ease-linear
+              border-[rgb(75,85,99,0.5)] border-[1px] bg-main"
                         >
                             <figure
-                                class="fill-main group-hover:fill-dark_border"
+                                class=" fill-primaryText group-hover:fill-main"
                             >
                                 <svg
                                     width="18"
@@ -130,7 +117,7 @@ import Layout from "../layouts/Layout.astro";
                                 >
                             </figure>
                             <span
-                                class="text-main text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
+                                class=" text-base @xl:text-lg group-hover:text-dark_border font-medium whitespace-nowrap tracking-wide"
                                 ><span class="hidden @sm:inline">Descargar</span
                                 > CV</span
                             >
