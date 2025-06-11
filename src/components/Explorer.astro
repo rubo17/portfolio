@@ -1,0 +1,54 @@
+---
+// Simulación de estructura de archivos
+const explorerItems = [
+  {
+    type: 'folder',
+    name: 'src',
+    open: true,
+    children: [
+      { type: 'folder', name: 'portfolio', open: true, children: [
+        { type: 'folder', name: 'Astro',open: true },
+        { type: 'folder', name: 'Node Modules',open: true },
+        { type: 'folder', name: 'public',open: true, children: [
+          { type: 'folder', name: 'about_me',open: true, children: [
+            { type: 'file', name: 'Sobre mi' },
+            { type: 'file', name: 'Experiencia' },
+            { type: 'file', name: 'Habilidades' },
+            { type: 'file', name: 'Contactame' },
+          ] },
+        ] },
+      ] },
+    ],
+  }
+];
+
+function renderItems(items:any, level = 0) {
+  return items.map((item: any) => {
+    const { type,name,open,children } = item;
+    if (item.type === 'folder') {
+      return (
+        `<div class="pl-${level * 4} flex items-center cursor-pointer group">
+          <span class="mr-1">${open ? '▼' : '▶'}</span>
+          <span class="font-semibold text-blue-300 group-hover:text-blue-200">${name}</span>
+        </div>` +
+        (item.open && item.children ? `<div>${renderItems(children, level + 1)}</div>` : '')
+      );
+    } else {
+      return `<div class="pl-${level * 4 + 4} flex items-center group">
+        <span class="mr-1"></span>
+        <span class="group-hover:text-white">${name}</span>
+      </div>`;
+    }
+  }).join('');
+}
+---
+
+<section class="w-[220px] h-full bg-main z-20 shadow-lg flex flex-col">
+  <div class="flex items-center px-3 py-2 ">
+    <span class="font-bold text-sm tracking-wide text-gray-200">Explorador de archivos</span>
+  </div>
+  <div class="flex-1 overflow-y-auto text-xs pt-2 pb-4">
+    <div class="space-y-1" set:html={renderItems(explorerItems)}></div>
+  </div>
+</section>
+

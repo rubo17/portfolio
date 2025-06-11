@@ -1,4 +1,5 @@
 ---
+import Explorer from "@components/Explorer.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import MenuTabs from "@components/MenuTabs.astro";
@@ -15,12 +16,13 @@ import "@styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-<body class="min-h-screen flex flex-col text-[#C4C8D1]">
+<body class="min-h-screen flex flex-col text-primaryText">
   <Header />
 
   <main class="flex-1">
     <div class="flex w-full h-full">
       <SideBar />
+	  	<Explorer />	
       <div class="flex flex-col flex-1 w-full">
         <MenuTabs />
         <slot />
@@ -38,5 +40,6 @@ import "@styles/global.css";
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		  overflow-x: hidden;
 	}
 </style>

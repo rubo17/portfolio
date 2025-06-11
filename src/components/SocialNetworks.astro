@@ -1,0 +1,30 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import WhatsappIcon from "./icons/WhatsappIcon.astro";
+---
+<ul
+  class="flex flex-row xl:flex-col justify-center self-center border-[1px] border-[#4b556380] py-3 xl:py-4 px-4 xl:px-3 bg-main rounded-[40px] gap-6 xl:relative absolute top-5 left-1/2 -translate-x-1/2 xl:left-auto xl:top-auto xl:-translate-x-0"
+>
+  <li class="flex items-center justify-center bg-main outline-none border-none rounded-full cursor-pointer last:hidden sm:last:flex" data-tooltip="Linkedin" data-flow="left">
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Linkedin link" class="size-full p-2 hover:bg-secondary transition-all duration-200 ease-linear rounded-full">
+      <LinkedinIcon class="w-5 h-5 xl:w-7 xl:h-7" />
+    </a>
+  </li>
+  <li class="flex items-center justify-center bg-main outline-none border-none rounded-full cursor-pointer last:hidden sm:last:flex" data-tooltip="Github" data-flow="left">
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Github link" class="size-full p-2 hover:bg-secondary transition-all duration-200 ease-linear rounded-full">
+      <GithubIcon class="w-5 h-5 xl:w-7 xl:h-7" />
+    </a>
+  </li>
+  <li class="flex items-center justify-center bg-main outline-none border-none rounded-full cursor-pointer last:hidden sm:last:flex" data-tooltip="Whatsapp" data-flow="left">
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp link" class="size-full p-2 hover:bg-secondary transition-all duration-200 ease-linear rounded-full">
+      <WhatsappIcon class="w-5 h-5 xl:w-7 xl:h-7" />
+    </a>
+  </li>
+  <li class="flex items-center justify-center bg-main outline-none border-none rounded-full cursor-pointer last:hidden sm:last:flex" data-tooltip="Instagram" data-flow="left">
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram link" class="size-full p-2 hover:bg-secondary transition-all duration-200 ease-linear rounded-full">
+      <InstagramIcon class="w-5 h-5 xl:w-7 xl:h-7" />
+    </a>
+  </li>
+</ul>
