@@ -1,14 +1,11 @@
----
-import Cerrar from "./icons/Cerrar.astro";
+import Cerrar from "@components/icons/CerrarReact";
 
-const items: string[] = Astro.props.items || ['Archivo', 'Editar'];
-const activeItem = Astro.props.activeItem || ''; // para futura selección
----
-
+export default function MenuTabs({ items = ["Archivo", "Editar"], activeItem = "Archivo" }) {
+  return (
 <nav class="w-full h-full max-h-[48px] bg-secondary border-b border-[#2A2A2A]  flex items-center">
   <ul class="flex text-sm font-medium h-full w-full">
-    {items.map((item: string) => (
-      <li class="h-full border-t-2 border-t-accent bg-accent/10 ">
+    {items.map((item) => (
+      <li class={`h-full border-t-2 border-t-accent ${activeItem === item ? "border-t-accent bg-accent/10" : "border-t-transparent"} flex items-center`}>
         <a
           href="#"
           class="group flex items-center gap-2 h-full w-full px-4"
@@ -17,6 +14,7 @@ const activeItem = Astro.props.activeItem || ''; // para futura selección
             <img
               alt="icon"
               src="/icons/star-icon.svg"
+              
               class="w-full h-full object-contain"
             />
           </figure>
@@ -29,3 +27,5 @@ const activeItem = Astro.props.activeItem || ''; // para futura selección
     ))}
   </ul>
 </nav>
+  );
+}

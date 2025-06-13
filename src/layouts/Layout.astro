@@ -1,9 +1,9 @@
 ---
-import Explorer from "@components/Explorer.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import MenuTabs from "@components/MenuTabs.astro";
-import SideBar from "@components/SideBar.astro";
+import MenuTabs from "@components/MenuTabs.jsx";
+import PanelSwitcher from "@components/island/PanelSwicher";
+
 import "@styles/global.css";
 ---
 
@@ -16,21 +16,21 @@ import "@styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-<body class="min-h-screen flex flex-col text-primaryText">
+<body class="min-h-screen flex flex-col text-primaryText overflow-hidden">
   <Header />
 
-  <main class="flex-1">
-    <div class="flex w-full h-full">
-      <SideBar />
-	  	<Explorer />	
-      <div class="flex flex-col flex-1 w-full">
-        <MenuTabs />
+  <main class="flex-1 flex flex-col min-h-0">
+    <div class="flex w-full h-full flex-1 min-h-0 overflow-hidden">
+		 <PanelSwitcher client:load />
+      <div class="flex flex-col flex-1 w-full h-full min-h-0 overflow-y-auto bg-secondary">
+        <MenuTabs client:load />
         <slot />
+
       </div>
     </div>
   </main>
 
-  <Footer />
+  <Footer class="fixed bottom-0 left-0 w-full z-50" />
 </body>
 </html>
 

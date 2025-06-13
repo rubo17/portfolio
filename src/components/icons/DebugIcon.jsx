@@ -1,13 +1,13 @@
----
-// DebugIcon.astro
----
+// DebugIcon.jsx (React)
+export default function DebugIcon({ className = "" }) {
+  return (
 <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"
     height="28"
     fill="none"
     viewBox="0 0 32 32"
-    class="text-disabled group-hover:text-highlight"
+    class={className}
 >
     <g clip-path="url(#clip0_8368_4955)">
         <path
@@ -21,3 +21,5 @@
         </clipPath>
     </defs>
 </svg>
+  );
+}
