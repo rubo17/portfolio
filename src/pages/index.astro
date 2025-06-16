@@ -1,4 +1,5 @@
 ---
+import AboutMe from "@components/about_me/AboutMe.astro";
 import Hero from "@components/about_me/Hero.astro";
 import "@styles/global.css";
 import Layout from "../layouts/Layout.astro";
@@ -8,9 +9,9 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <section class="relative container mx-auto p-10 h-full overflow-auto">
+    <section class="relative container mx-auto p-10 h-full">
         <Hero/>
-        <div class="scroll-down h-max"><span></span> <span></span></div>
+        <AboutMe/>     
     </section>
 </Layout>
 

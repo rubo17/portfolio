@@ -27,8 +27,8 @@ export default function SideBar({ active, setActive }) {
             key={tooltip}
             data-tooltip={tooltip}
             data-flow="right"
-            className={`flex cursor-pointer items-center justify-center w-[54px] h-[54px] group${active === idx ? " bg-accent/20" : ""}`}
-            onClick={() => setActive(idx)}
+            className={`flex cursor-pointer items-center justify-center w-[54px] h-[54px] group${active === idx ? " bg-accent/20 border-l-2 border-accent" : ""}`}
+            onClick={() => setActive(active === idx ? null : idx)}
           >
             <Icon className="w-6 h-6" />
           </button>

@@ -1,9 +1,9 @@
-import DebugPanel from "@components/DebugPanel";
-import Explorer from "@components/Explorer";
-import ExtensionsPanel from "@components/ExtensionsPanel";
-import SearchPanel from "@components/SearchPanel";
+import DebugPanel from "@components/side_menu/DebugPanel";
+import Explorer from "@components/side_menu/Explorer";
+import ExtensionsPanel from "@components/side_menu/ExtensionsPanel";
+import SearchPanel from "@components/side_menu/SearchPanel";
+import SourceControlPanel from "@components/side_menu/SourceControlPanel";
 import SideBar from "@components/SideBar";
-import SourceControlPanel from "@components/SourceControlPanel";
 import { useState } from "react";
 
 export default function PanelSwitcher() {
@@ -11,7 +11,7 @@ export default function PanelSwitcher() {
 
   const renderPanel = () => {
     switch (activePanel) {
-      case 0: return <Explorer />;
+      case 0: return <Explorer onClose={() => setActivePanel(null)} />;
       case 1: return <SearchPanel />;
       case 2: return <SourceControlPanel />;
       case 3: return <DebugPanel />;
