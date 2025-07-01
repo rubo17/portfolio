@@ -10,8 +10,8 @@ module.exports = {
         main: '#181818',
         secondary: '#1F1F1F',
         primaryText: '#C4C8D1',
-        accent: '#7FDBFF', // Azul claro, puedes cambiarlo si prefieres otro tono
-        // ...otros colores personalizados...
+        accent: '#7FDBFF', 
+        skillColor: '#292939'
       },
     },
   },
