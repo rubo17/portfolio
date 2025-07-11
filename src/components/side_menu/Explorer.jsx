@@ -2,7 +2,6 @@ import Flecha from "@components/icons/Flecha";
 import FlechaFolder from "@components/icons/FlechaFolder";
 import { useState } from "react";
 import PanelSection from "./PanelSection";
-
 const explorerItems = [
     {
         type: "folder",
@@ -32,6 +31,11 @@ const explorerItems = [
     },
 ];
 
+function getSectionId(filename) {
+  // Quita la extensión y reemplaza guiones por guiones bajos si quieres
+  return filename.replace(/\.txt$/, "");
+}
+
 function Folder({ item, level = 0 }) {
   const [open, setOpen] = useState(item.open);
   return (
@@ -55,7 +59,7 @@ function Folder({ item, level = 0 }) {
                 className="flex items-center py-1 text-gray-400 hover:text-accent cursor-pointer"
                 style={{ paddingLeft: (level + 1) * 16 }}
               >
-                {child.name}
+                <a href={`#${getSectionId(child.name)}`}>{child.name}</a>
               </li>
             )
           )}
