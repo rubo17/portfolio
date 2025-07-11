@@ -59,6 +59,7 @@ function Folder({ item, level = 0 }) {
                 className="flex items-center py-1 text-gray-400 hover:text-accent cursor-pointer"
                 style={{ paddingLeft: (level + 1) * 16 }}
               >
+                {/*Lleva a la seccion recogiendo el id */}
                 <a href={`#${getSectionId(child.name)}`}>{child.name}</a>
               </li>
             )
