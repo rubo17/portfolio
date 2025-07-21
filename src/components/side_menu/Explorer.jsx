@@ -3,37 +3,62 @@ import FlechaFolder from "@components/icons/FlechaFolder";
 import { useState } from "react";
 import PanelSection from "./PanelSection";
 const explorerItems = [
-    {
+  {
+    type: "folder",
+    name: "portfolio",
+    open: true,
+    children: [
+      {
         type: "folder",
-        name: "portfolio",
+        name: "public",
         open: true,
         children: [
-            {
+          {
+            type: "folder",
+            name: "about_me",
+            open: true,
+            children: [
+              { type: "file", name: "sobre-mi" },
+              { type: "file", name: "experiencia" },
+              { type: "file", name: "habilidades" },
+              { type: "file", name: "proyectos" },
+              { type: "file", name: "contacto" },
+            ],
+          },
+        ],
+      },
+      {
+        type: "folder",
+        name: "src",
+        open: true,
+        children: [
+          {
+            type: "folder",
+            name: "my_proyects",
+            open: true,
+            children: [
+              {
                 type: "folder",
-                name: "public",
+                name: "longlife",
                 open: true,
                 children: [
-                    {
-                        type: "folder",
-                        name: "about_me",
-                        open: true,
-                        children: [
-                            { type: "file", name: "sobre-mi.txt" },
-                            { type: "file", name: "experiencia.txt" },
-                            { type: "file", name: "habilidades.txt" },
-                            { type: "file", name: "proyectos.txt" },
-                            { type: "file", name: "contacto.txt" },
-                        ],
-                    },
+                  { type: "file", name: "acerca" },
+                  { type: "file", name: "desafio" },
+                  { type: "file", name: "desafio" },
                 ],
-            },
+              }
+            ],
+          },
         ],
-    },
+      }
+    ],
+  },
+
 ];
 
 function getSectionId(filename) {
   // Quita la extensión y reemplaza guiones por guiones bajos si quieres
-  return filename.replace(/\.txt$/, "");
+  return filename
 }
 
 function Folder({ item, level = 0 }) {
@@ -71,21 +96,21 @@ function Folder({ item, level = 0 }) {
 }
 
 export default function Explorer({ onClose }) {
-    return (
-        <PanelSection>
+  return (
+    <PanelSection>
       <div className="flex items-center px-3 py-2 justify-between">
         <span className="font-bold text-sm tracking-wide text-accent">Explorador de archivos</span>
         <button onClick={onClose}>
-          <Flecha  className="text-accent" />
+          <Flecha className="text-accent" />
         </button>
       </div>
-            <ul className="select-none">
-                {explorerItems.map((item, idx) =>
-                    item.type === "folder" ? (
-                        <Folder key={item.name + idx} item={item} />
-                    ) : null
-                )}
-            </ul>
-        </PanelSection>
-    );
+      <ul className="select-none">
+        {explorerItems.map((item, idx) =>
+          item.type === "folder" ? (
+            <Folder key={item.name + idx} item={item} />
+          ) : null
+        )}
+      </ul>
+    </PanelSection>
+  );
 }
