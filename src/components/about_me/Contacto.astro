@@ -1,0 +1,78 @@
+---
+import Email from "@components/icons/Email.astro";
+import LinkedinIcon from "@components/icons/LinkedinIcon.astro";
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="contacto"
+    title="Contactame"
+    description="¿Tienes una idea en mente? Transformémosla en una experiencia visual única y funcional."
+>
+    <div class="flex flex-col gap-8 md:flex-row md:gap-10 w-full">
+        <form
+            action=""
+            class="flex flex-col gap-4 w-full max-w-lg mx-auto bg-main/80 p-6 rounded-xl shadow-lg"
+        >
+            <label class="text-sm font-semibold" for="nombre">Nombre</label>
+            <input
+                id="nombre"
+                type="text"
+                class="rounded-md px-3 py-2 bg-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent text-primaryText"
+                placeholder="Tu nombre"
+            />
+
+            <label class="text-sm font-semibold" for="correo">Correo</label>
+            <input
+                id="correo"
+                type="email"
+                class="rounded-md px-3 py-2 bg-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent text-primaryText"
+                placeholder="tucorreo@email.com"
+            />
+
+            <label class="text-sm font-semibold" for="mensaje">Mensaje</label>
+            <textarea
+                id="mensaje"
+                rows="5"
+                class="rounded-md px-3 py-2 bg-secondary border border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent text-primaryText resize-none"
+                placeholder="Escribe tu mensaje..."></textarea>
+
+            <button
+                type="submit"
+                class="mt-2 bg-violet-700 text-white font-bold py-2 px-6 rounded-md hover:bg-accent/90 transition"
+                >Enviar</button
+            >
+        </form>
+        <div class="w-full flex flex-col justify-center items-center gap-4">
+            <p class="max-w-md text-lg text-primaryText/90 text-center">
+                <span class="font-semibold text-violet-700"
+                    >¿Estás listo para dar vida a tu próximo proyecto?</span
+                ><br />Por favor, completa el formulario y cuéntame tu idea.
+                ¡Estaré encantado de ayudarte!
+            </p>
+            <p class="text-base text-primaryText/80 text-center">
+                O contáctame por:
+            </p>
+            <div class="flex gap-3 justify-center md:justify-start">
+                <a
+                    href="mailto:rubencabrerizo17@mail.com.com"
+                    class="flex gap-4 items-center justify-center bg-blue-600 hover:bg-blue-500/90 text-white font-semibold px-4 py-2 rounded transition"
+                >
+                    <Email class="w-8 h-8" />
+                    <span>Email</span>
+                </a>
+
+                <div>
+                    <a
+                        href="https://www.linkedin.com/in/ruben-cabrerizo-274a3532b/"
+                        target="_blank"
+                        class="flex items-center justify-center flex-4 bg-blue-400 hover:bg-blue-400/90 font-semibold px-4 py-2 rounded hover:bg-accent hover:text-white transition"
+                    >
+                        <LinkedinIcon class="w-8 h-8" />
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</LayoutContent>

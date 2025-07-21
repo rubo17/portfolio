@@ -1,0 +1,106 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import AstroIcon from "@components/icons/AstroIcon.astro";
+import Codeigniter from "@components/icons/Codeigniter.astro";
+import Css from "@components/icons/Css.astro";
+import Docker from "@components/icons/Docker.astro";
+import Git from "@components/icons/Git.astro";
+import Html from "@components/icons/Html.astro";
+import JavaScript from "@components/icons/JavaScript.astro";
+import Laravel from "@components/icons/Laravel.astro";
+import NextIcon from "@components/icons/Next.astro";
+import Php from "@components/icons/Php.astro";
+import Postman from "@components/icons/Postman.astro";
+import ReactIcon from "@components/icons/React.astro";
+import Sql from "@components/icons/Sql.astro";
+import TypeScript from "@components/icons/TypeScript.astro";
+import Visual from "@components/icons/Visual.astro";
+import Vue from "@components/icons/Vue.astro";
+
+const frontend = [
+  { name: "HTML", icon: Html },
+  { name: "CSS", icon: Css },
+  { name: "JavaScript", icon: JavaScript },
+  { name: "TypeScript", icon: TypeScript },
+  { name: "Vue", icon: Vue },
+  { name: "React", icon: ReactIcon },
+  { name: "Astro", icon: AstroIcon },
+  { name: "Next.js", icon: NextIcon },
+];
+
+const backend = [
+  { name: "PHP", icon: Php },
+  { name: "LARAVEL", icon: Laravel },
+  { name: "CODEIGNITER", icon: Codeigniter },
+  { name: "MYSQL", icon: Sql },
+];
+
+const herramientas = [
+  { name: "DOCKER", icon: Docker },
+  { name: "VISUAL", icon: Visual },
+  { name: "GIT", icon: Git },
+  { name: "POSTMAN", icon: Postman },
+];
+---
+
+<LayoutContent
+  id="habilidades"
+  title="Habilidades"
+  description="Mis habilidades como desarrollador"
+>
+  <div class="flex flex-col w-full gap-10">
+    <div class="space-y-5">
+      <h1 class="text-lg mb-2">FrontEnd</h1>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      >
+        {
+          frontend.map((el) => (
+            <div class="flex items-center gap-2 p-4 bg-skillColor rounded-lg h-18">
+              {el.icon && <el.icon class="w-8 h-8 mb-1" />}
+              <span class="uppercase font-bold text-sm text-primaryText text-center">
+                {el.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="space-y-5">
+      <h1 class="text-lg mb-2">Backend</h1>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      >
+        {
+          backend.map((el) => (
+            <div class="flex items-center gap-2 p-4 bg-skillColor rounded-lg h-18">
+              {el.icon && <el.icon class="w-8 h-8 mb-1" />}
+              <span class="uppercase font-bold text-sm text-primaryText text-center">
+                {el.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="space-y-5">
+      <h1 class="text-lg mb-2">Herramientas</h1>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      >
+        {
+          herramientas.map((el) => (
+            <div class="flex items-center gap-2 p-4 bg-skillColor rounded-lg h-18">
+              {el.icon && <el.icon class="w-8 h-8 mb-1" />}
+              <span class="uppercase font-bold text-sm text-primaryText text-center">
+                {el.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</LayoutContent>
