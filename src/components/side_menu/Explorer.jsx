@@ -27,6 +27,7 @@ const explorerItems = [
           },
         ],
       },
+      /*
       {
         type: "folder",
         name: "src",
@@ -50,7 +51,7 @@ const explorerItems = [
             ],
           },
         ],
-      }
+      }*/
     ],
   },
 

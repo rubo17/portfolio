@@ -1,7 +1,7 @@
 import Cerrar from "@components/icons/CerrarReact";
 import { useState } from "react";
-
-export default function MenuTabs({ items = ["About me", "Editar"], activeItem = "About me" }) {
+import Star from "./icons/Star.jsx";
+export default function MenuTabs({ items = ["About me"], activeItem = "About me" }) {
   const [tabs, setTabs] = useState(items);
   const [activeTab, setActiveTab] = useState(activeItem);
 
@@ -29,13 +29,7 @@ export default function MenuTabs({ items = ["About me", "Editar"], activeItem = 
               href="#"
               className="group flex items-center gap-2 h-full w-full px-4"
             >
-              <figure className="size-[20px]">
-                <img
-                  alt="icon"
-                  src="/icons/star-icon.svg"
-                  className="w-full h-full object-contain"
-                />
-              </figure>
+              <Star className="w-5 h-5" />
               <span className="text-primaryText text-[15px] whitespace-nowrap">
                 {item}
               </span>
