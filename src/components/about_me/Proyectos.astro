@@ -1,5 +1,10 @@
 ---
+import Codeigniter from "@components/icons/Codeigniter.astro";
+import Laravel from "@components/icons/Laravel.astro";
+import Next from "@components/icons/Next.astro";
+import Vue from "@components/icons/Vue.astro";
 import LayoutContent from "@components/LayoutContent.astro";
+import CardProyect from "@components/about_me/CardProyect.astro";
 
 ---
 
@@ -9,26 +14,19 @@ import LayoutContent from "@components/LayoutContent.astro";
   description="Mis proyectos mas destacados"
 >
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="rounded-xl bg-gradient-to-br from-blue-900 to-blue-700 border border-blue-800 shadow-lg overflow-hidden flex flex-col transition-transform hover:scale-[1.03] hover:shadow-xl">
-      
-      <a href="rubencabrerizo.com/longlife" target="_blank">
-      <img class="object-cover w-full" src="/portfolio/longlife.PNG" alt="Longlife" />
-    </a>
-      <div class="p-5 flex flex-col gap-2 flex-1">
-        <h2 class="text-xl font-bold text-accent">Longlife</h2>
-        <p class="text-primaryText/90">Mi proyecto de nutrición</p>
-        <a href="#" class="mt-auto inline-block text-accent font-semibold hover:underline">Ver más</a>
-      </div>
-    </div>
-        <div class="rounded-xl bg-gradient-to-br from-blue-900 to-blue-700 border border-blue-800 shadow-lg overflow-hidden flex flex-col transition-transform hover:scale-[1.03] hover:shadow-xl">
-          <a href="https://formacion.aiudo.es/" target="_blank">
-             <img class="object-cover w-full" src="/portfolio/aiudoProyecto.PNG" alt="Aiudo" />
-          </a>
-      <div class="p-5 flex flex-col gap-2 flex-1">
-        <h2 class="text-xl font-bold text-accent">Formación aiudo</h2>
-        <p class="text-primaryText/90">Proyecto para empresa de cursos</p>
-        <a href="#" class="mt-auto inline-block text-accent font-semibold hover:underline">Ver más</a>
-      </div>
-    </div>
+    <CardProyect
+      title="Longlife"
+      description="Mi proyecto de nutrición"
+      image="/portfolio/longlife.PNG"
+      link="https://rubencabrerizo.com/longlife"
+      icons={[Vue, Codeigniter]}
+    />
+    <CardProyect
+      title="Formación aiudo"
+      description="Proyecto para empresa de cursos"
+      image="/portfolio/aiudoProyecto.PNG"
+      link="https://formacion.aiudo.es/"
+      icons={[Next, Laravel]}
+    />
   </div>
 </LayoutContent>
