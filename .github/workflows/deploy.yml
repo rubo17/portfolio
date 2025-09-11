@@ -30,4 +30,4 @@ jobs:
           port: ${{ secrets.FTP_PORT }}          # usualmente 21
           protocol: ftp
           local-dir: ./dist/                     # Astro genera aquí la wedb final
-          server-dir: /public_html/portfolio/           # carpeta raíz de tu dominio en Hostinger
+          server-dir: /public_html/portfolio/           # carpetaa raíz de tu dominio en Hostinger
