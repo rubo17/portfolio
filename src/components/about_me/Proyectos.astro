@@ -5,7 +5,7 @@ import Next from "@components/icons/Next.astro";
 import Vue from "@components/icons/Vue.astro";
 import LayoutContent from "@components/LayoutContent.astro";
 import CardProyect from "@components/about_me/CardProyect.astro";
-
+import Nuxt from "@components/icons/Nuxt.astro";
 ---
 
 <LayoutContent 
@@ -20,6 +20,7 @@ import CardProyect from "@components/about_me/CardProyect.astro";
       image="/portfolio/longlife.PNG"
       link="https://rubencabrerizo.com/longLife"
       icons={[Vue, Codeigniter]}
+      finish={true}
     />
     <CardProyect
       title="Formación aiudo"
@@ -27,6 +28,15 @@ import CardProyect from "@components/about_me/CardProyect.astro";
       image="/portfolio/aiudoProyecto.PNG"
       link="https://formacion.aiudo.es/"
       icons={[Next, Laravel]}
+      finish={true}
+    />
+        <CardProyect
+      title="Barber Time"
+      description="Proyecto para automatizar citas de barberos (EN PROCESO)"
+      image="/portfolio/barbertime.png"
+      link="#"
+      icons={[Nuxt, Laravel]}
+      finish={false}
     />
   </div>
 </LayoutContent>

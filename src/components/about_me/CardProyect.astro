@@ -6,11 +6,12 @@ export interface CardProyectProps {
 	image: string;
 	link: string;
 	icons: any[];
+	finish?: boolean;
 }
-const { title, description, image, link, icons } = Astro.props;
+const { title, description, image, link, icons, finish } = Astro.props;
 ---
 <div class="rounded-2xl bg-main overflow-hidden flex flex-col transition-transform hover:scale-[1.03] hover:shadow-2xl">
-	<a href={link} target="_blank" class="block">
+	<a href={link} {...(finish ? { target: "_blank" } : {})} class="block">
 		<img class="object-cover w-full h-48 md:h-56 lg:h-64 transition-all duration-300 hover:brightness-90" src={image} alt={title} />
 	</a>
 	<div class="p-6 flex flex-col gap-3 flex-1">
