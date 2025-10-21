@@ -1,6 +1,6 @@
 import Flecha from "@components/icons/Flecha";
 import FlechaFolder from "@components/icons/FlechaFolder";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PanelSection from "./PanelSection";
 const explorerItems = [
   {
@@ -62,7 +62,7 @@ function getSectionId(filename) {
   return filename
 }
 
-function Folder({ item, level = 0 }) {
+function Folder({ item, level = 0, activeFile, setActiveFile }) {
   const [open, setOpen] = useState(item.open);
   return (
     <li className="">
@@ -78,14 +78,22 @@ function Folder({ item, level = 0 }) {
         <ul>
           {item.children.map((child, idx) =>
             child.type === 'folder' ? (
-              <Folder key={child.name + idx} item={child} level={level + 1} />
+              <Folder key={child.name + idx} item={child} level={level + 1} activeFile={activeFile}
+                setActiveFile={setActiveFile} />
             ) : (
               <li
                 key={child.name + idx}
-                className="flex items-center py-1 text-gray-400 hover:text-accent cursor-pointer"
+                className={`flex items-center py-1 cursor-pointer ${
+                  activeFile === child.name
+                    ? "text-accent font-bold"
+                    : "text-gray-400 hover:text-accent"
+                }`}
                 style={{ paddingLeft: (level + 1) * 16 }}
+                onClick={(e) => {
+                  e.stopPropagation(); // evita que se cierre la carpeta al hacer clic en el archivo
+                  setActiveFile(child.name);
+                }}
               >
-                {/*Lleva a la seccion recogiendo el id */}
                 <a href={`#${getSectionId(child.name)}`}>{child.name}</a>
               </li>
             )
@@ -97,6 +105,8 @@ function Folder({ item, level = 0 }) {
 }
 
 export default function Explorer({ onClose }) {
+  const [activeFile, setActiveFile] = useState(null);
+
   return (
     <PanelSection>
       <div className="flex items-center px-3 py-2 justify-between">
@@ -108,8 +118,12 @@ export default function Explorer({ onClose }) {
       <ul className="select-none">
         {explorerItems.map((item, idx) =>
           item.type === "folder" ? (
-            <Folder key={item.name + idx} item={item} />
-          ) : null
+            <Folder
+              key={item.name + idx}
+              item={item}
+              activeFile={activeFile}
+              setActiveFile={setActiveFile}
+            />) : null
         )}
       </ul>
     </PanelSection>
