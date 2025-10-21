@@ -13,7 +13,7 @@ export default function DebugPanel() {
   const variables = [
     { name: "NODE_ENV", value: "development", scope: "Global" },
     { name: "PORT", value: "4321", scope: "Local" },
-    { name: "BASE_URL", value: "/portfolio/", scope: "Local" },
+    { name: "BASE_URL", value: "/", scope: "Local" },
   ];
 
   const watchExpressions = [
