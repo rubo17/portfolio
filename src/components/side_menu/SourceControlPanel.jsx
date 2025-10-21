@@ -1,3 +1,4 @@
+import SourceControlIcon from "@components/icons/SourceControlIcon";
 import PanelSection from "@components/side_menu/PanelSection";
 import { useState } from "react";
 
@@ -19,25 +20,32 @@ export default function SourceControlPanel() {
   return (
     <PanelSection>
       <div className="px-3">
-        <h2 className="font-bold text-sm tracking-wide text-accent mb-3">CONTROL DE CÓDIGO FUENTE</h2>
+        <h2 className="font-bold text-sm tracking-wide text-accent mb-3">SOURCE CONTROL</h2>
 
         {/* Commit Input */}
         <div className="mb-4">
-          <textarea
-            placeholder="Mensaje (Ctrl+Enter para confirmar cambios)"
-            value={commitMessage}
-            onChange={(e) => setCommitMessage(e.target.value)}
-            className="w-full bg-secondary text-primaryText px-3 py-2 text-xs rounded border border-gray-700 focus:border-accent focus:outline-none resize-none h-20"
-          />
-          <button className="mt-2 w-full bg-accent/10 hover:bg-accent/20 border border-accent text-accent px-3 py-1.5 text-xs rounded transition">
-            ✓ Confirmar cambios
+          <div className="relative">
+            <input
+              type="text"
+              value={commitMessage}
+              onChange={(e) => setCommitMessage(e.target.value)}
+              className="bg-secondary text-primaryText p-3 pr-10 w-full text-xs rounded border border-gray-700 focus:border-accent focus:ring-2 focus:ring-accent/30 focus:outline-none transition"
+              placeholder="Message (Ctrl+Enter to commit)"
+            />
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+              <SourceControlIcon className="text-accent w-4 h-4" />
+            </div>
+          </div>
+
+          <button className="mt-2 w-full bg-accent/90 hover:bg-accent/20 border border-accent text-white px-3 py-1.5 text-xs rounded transition">
+            ✓ Commit
           </button>
         </div>
 
         {/* Changes Section */}
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xs font-semibold text-gray-300 uppercase">Cambios ({changes.length})</h3>
+            <h3 className="text-xs font-semibold text-gray-300 uppercase">Changes ({changes.length})</h3>
             <button className="text-accent hover:text-accent/80 text-xs" title="Actualizar">
               ↻
             </button>
@@ -62,36 +70,6 @@ export default function SourceControlPanel() {
                   <button className="text-gray-400 hover:text-gray-300 text-xs" title="Descartar cambios">
                     ↶
                   </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Branch Info */}
-        <div className="mb-4 p-2 bg-secondary rounded">
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-gray-400">Rama:</span>
-            <span className="text-accent font-semibold">main</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs mt-1">
-            <span className="text-gray-400">Remoto:</span>
-            <span className="text-gray-300">origin/main</span>
-          </div>
-        </div>
-
-        {/* Recent Commits */}
-        <div>
-          <h3 className="text-xs font-semibold text-gray-300 uppercase mb-2">Commits recientes</h3>
-          <ul className="space-y-2">
-            {recentCommits.map((commit, idx) => (
-              <li key={idx} className="p-2 hover:bg-secondary rounded cursor-pointer">
-                <div className="flex items-start gap-2">
-                  <span className="font-mono text-xs text-accent">{commit.hash}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-gray-300 truncate">{commit.message}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">{commit.time}</p>
-                  </div>
                 </div>
               </li>
             ))}
