@@ -3,8 +3,15 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import MenuTabs from "@components/MenuTabs.jsx";
 import PanelSwitcher from "@components/side_menu/PanelSwicher";
+import { ClientRouter, ViewTransitions } from 'astro:transitions';
 
 import "@styles/global.css";
+
+interface Props {
+  pageName?: string;
+}
+
+const { pageName = "About me" } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,6 +22,7 @@ import "@styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/portfolio/logorubo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Portfolio</title>
+		<ClientRouter />
 	</head>
 	<body class="min-h-screen flex flex-col bg-main text-primaryText overflow-hidden">
 		<Header />
@@ -26,7 +34,7 @@ import "@styles/global.css";
 					class="flex flex-col flex-1 w-full h-full min-h-0 overflow-y-auto bg-secondary scrollbar-hidden"
 				>
 					<div class="sticky top-0 z-40">
-						<MenuTabs client:load />  
+						<MenuTabs client:load currentPage={pageName} />
 					</div>
 					<slot />
 				</div>
