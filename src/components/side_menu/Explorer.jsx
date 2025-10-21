@@ -145,58 +145,6 @@ function Folder({ item, level = 0, activeFile, setActiveFile }) {
 export default function Explorer({ onClose }) {
   const [activeFile, setActiveFile] = useState(null);
 
-  // Sincronizar activeFile con la URL actual
-  useEffect(() => {
-    const updateActiveFromUrl = () => {
-      const currentPath = window.location.pathname;
-      const currentHash = window.location.hash;
-      const fullUrl = currentPath + currentHash;
-
-      // Buscar el archivo activo basado en la URL
-      const findActiveFile = (items) => {
-        for (const item of items) {
-          if (item.type === 'folder' && item.children) {
-            const found = findActiveFile(item.children);
-            if (found) return found;
-          } else if (item.type === 'file' && item.url) {
-            // Normalizar URLs para comparación
-            const itemUrl = item.url.startsWith('/') ? item.url : '/' + item.url;
-            const normalizedFullUrl = fullUrl === '/' ? '/#sobre-mi' : fullUrl;
-
-            // Comparar URL completa (path + hash)
-            if (itemUrl === normalizedFullUrl) {
-              return item.name;
-            }
-          }
-        }
-        return null;
-      };
-
-      const active = findActiveFile(explorerItems);
-      if (active) {
-        setActiveFile(active);
-      }
-    };
-
-    // Actualizar al montar
-    updateActiveFromUrl();
-
-    // Escuchar cambios de navegación
-    window.addEventListener('popstate', updateActiveFromUrl);
-    window.addEventListener('hashchange', updateActiveFromUrl);
-
-    // Para Astro View Transitions
-    document.addEventListener('astro:page-load', updateActiveFromUrl);
-    document.addEventListener('astro:after-swap', updateActiveFromUrl);
-
-    return () => {
-      window.removeEventListener('popstate', updateActiveFromUrl);
-      window.removeEventListener('hashchange', updateActiveFromUrl);
-      document.removeEventListener('astro:page-load', updateActiveFromUrl);
-      document.removeEventListener('astro:after-swap', updateActiveFromUrl);
-    };
-  }, []);
-
   return (
     <PanelSection>
       <div className="flex items-center px-3 py-2 justify-between">
