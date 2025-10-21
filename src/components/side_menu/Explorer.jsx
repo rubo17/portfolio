@@ -2,6 +2,7 @@ import Flecha from "@components/icons/Flecha";
 import FlechaFolder from "@components/icons/FlechaFolder";
 import { useEffect, useState } from "react";
 import PanelSection from "./PanelSection";
+import { navigate } from 'astro:transitions/client';
 const explorerItems = [
   {
     type: "folder",
@@ -18,16 +19,15 @@ const explorerItems = [
             name: "about_me",
             open: true,
             children: [
-              { type: "file", name: "sobre-mi" },
-              { type: "file", name: "experiencia" },
-              { type: "file", name: "habilidades" },
-              { type: "file", name: "proyectos" },
-              { type: "file", name: "contacto" },
+              { type: "file", name: "sobre-mi", url: "/portfolio/#sobre-mi" },
+              { type: "file", name: "experiencia", url: "/portfolio/#experiencia" },
+              { type: "file", name: "habilidades", url: "/portfolio/#habilidades" },
+              { type: "file", name: "proyectos", url: "/portfolio/#proyectos" },
+              { type: "file", name: "contacto", url: "/portfolio/#contacto" },
             ],
           },
         ],
       },
-      /*
       {
         type: "folder",
         name: "src",
@@ -35,23 +35,24 @@ const explorerItems = [
         children: [
           {
             type: "folder",
-            name: "my_proyects",
+            name: "my_projects",
             open: true,
             children: [
               {
                 type: "folder",
-                name: "longlife",
-                open: true,
+                name: "longLife",
+                open: false,
                 children: [
-                  { type: "file", name: "acerca" },
-                  { type: "file", name: "desafio" },
-                  { type: "file", name: "desafio" },
+                  { type: "file", name: "acerca", url: "/portfolio/my-projects/longLife#acerca" },
+                  { type: "file", name: "tecnologias", url: "/portfolio/my-projects/longLife#tecnologias" },
+                  { type: "file", name: "desafio", url: "/portfolio/my-projects/longLife#desafio" },
+                  { type: "file", name: "solucion", url: "/portfolio/my-projects/longLife#solucion" },
                 ],
-              }
+              },
             ],
           },
         ],
-      }*/
+      }
     ],
   },
 
@@ -64,12 +65,32 @@ function getSectionId(filename) {
 
 function Folder({ item, level = 0, activeFile, setActiveFile }) {
   const [open, setOpen] = useState(item.open);
+
+  // Cargar estado desde localStorage solo en el cliente
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedState = localStorage.getItem(`folder-${item.name}`);
+      if (savedState !== null) {
+        setOpen(JSON.parse(savedState));
+      }
+    }
+  }, [item.name]);
+
+  // Guardar estado en localStorage cuando cambia
+  const toggleOpen = () => {
+    const newState = !open;
+    setOpen(newState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(`folder-${item.name}`, JSON.stringify(newState));
+    }
+  };
+
   return (
     <li className="">
       <div
         className="flex items-center cursor-pointer py-1  hover:bg-accent/10 "
         style={{ paddingLeft: level * 16 }}
-        onClick={() => setOpen((o) => !o)}
+        onClick={toggleOpen}
       >
         <FlechaFolder className={`w-3 h-3 mr-1 transition-transform ${open ? "-rotate-90" : ""}`} />
         <span className="font-semibold text-gray-200">{item.name}</span>
@@ -89,12 +110,30 @@ function Folder({ item, level = 0, activeFile, setActiveFile }) {
                     : "text-gray-400 hover:text-accent"
                 }`}
                 style={{ paddingLeft: (level + 1) * 16 }}
-                onClick={(e) => {
-                  e.stopPropagation(); // evita que se cierre la carpeta al hacer clic en el archivo
-                  setActiveFile(child.name);
-                }}
               >
-                <a href={`#${getSectionId(child.name)}`}>{child.name}</a>
+                {child.url ? (
+                  <a
+                    href={child.url}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setActiveFile(child.name);
+                      navigate(child.url);
+                    }}
+                  >
+                    {child.name}
+                  </a>
+                ) : (
+                  <a
+                    href={`#${child.section || getSectionId(child.name)}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveFile(child.name);
+                    }}
+                  >
+                    {child.name}
+                  </a>
+                )}
               </li>
             )
           )}
