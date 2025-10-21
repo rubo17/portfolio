@@ -43,9 +43,9 @@ const explorerItems = [
                 name: "longLife",
                 open: false,
                 children: [
-                  { type: "file", name: "acerca", url: "/my-projects/longLife#acerca" },
-                  { type: "file", name: "tecnologias", url: "/my-projects/longLife#tecnologias" },
-                  { type: "file", name: "desafio", url: "/my-projects/longLife#desafio" },
+                  { type: "file", name: "acerca", url: "/my-projects/longLife/#acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/longLife/#tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/longLife/#desafio" },
                 ],
               },
             ],
