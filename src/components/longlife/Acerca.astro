@@ -1,0 +1,61 @@
+---
+import ButtonProjectRedirect from "@components/shared/ButtonProjectRedirect.astro";
+import Carousel from "../shared/Carousel.jsx";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+import CodeIcon from "@components/icons/CodeIcon.astro";
+// Aquí defines las imágenes de tu proyecto
+const projectImages = [
+    {
+        src: "/portfolio/img/longlife/inicio.png",
+        alt: "Pantalla principal de LongLife",
+        description: "Pagina de inicio",
+    },
+    {
+        src: "/portfolio/img/longlife/tienda.png",
+        alt: "Tienda de productos",
+        description: "Catálogo de productos nutricionales",
+    },
+    {
+        src: "/portfolio/img/longlife/planes.png",
+        alt: "Planes premium",
+        description: "Sección de planes personalizados",
+    },
+    {
+        src: "/portfolio/img/longlife/suscripciones.png",
+        alt: "Suscripciones",
+        description: "Gestión de suscripciones premium",
+    },
+];
+---
+
+<section id="" class="mt-10">
+    <div
+        id="acerca"
+        class="flex flex-col gap-6 justify-center items-center mb-10"
+    >
+        <h1 class="text-4xl font-bold text-accent">LonLife (TFG)</h1>
+        <p class="text-lg text-center max-w-3xl text-gray-300">
+            Aplicación web de nutrición que incluye compra de producos de
+            nutrición, opción de ser usuario premium para contenido exclusivo y
+            la posibiloidad de pagar por planes de nutrición personalizados.
+        </p>
+        <div class="flex flex-col md:flex-row gap-6">
+            <ButtonProjectRedirect
+                icon={GithubIcon}
+                text="Ver en GitHub"
+                url="https://github.com/rubo17/long-life"
+                external={true}
+            />
+            <ButtonProjectRedirect
+                icon={CodeIcon}
+                text="Ver proyecto"
+                url="https://rubencabrerizo.com/longLife/"
+                external={true}
+            />
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <Carousel client:load images={projectImages} />
+    </div>
+</section>

@@ -1,0 +1,90 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import VueIcon from "@components/icons/Vue.astro";
+import CodeigniterIcon from "@components/icons/Codeigniter.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import JavaScriptIcon from "@components/icons/JavaScript.astro";
+import HtmlIcon from "@components/icons/Html.astro";
+import CssIcon from "@components/icons/Css.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import PhpIcon from "@components/icons/Php.astro";
+import React from "@components/icons/React.astro";
+import TypeScript from "@components/icons/TypeScript.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de LongLife"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={VueIcon}
+                    title="Vue 3"
+                    subtitle="Framework Principal"
+                    description="Framework progresivo de JavaScript para construir interfaces de usuario reactivas. Utilizado con Composition API para mejor organización del código."
+                />
+
+                <TechnologyCard
+                    icon={TypeScript}
+                    title="TypeScript"
+                    subtitle="Lenguaje Base"
+                    description="Lenguaje de tipado fuerte para lógica de aplicación, manipulación de datos y gestión de estado."
+                />
+
+                <TechnologyCard
+                    icon={HtmlIcon}
+                    title="HTML5"
+                    subtitle="Estructura"
+                    description="Semántica moderna para una estructura de página accesible y optimizada para SEO."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS"
+                    subtitle="Estilos"
+                    description="Estilos modernos con flexbox, grid y animaciones para una interfaz atractiva y responsive."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={CodeigniterIcon}
+                    title="CodeIgniter 4"
+                    subtitle="Framework PHP"
+                    description="Framework PHP ligero y potente para el desarrollo de la API REST. Proporciona arquitectura MVC, routing y gestión de sesiones."
+                    tags={["RESTful API", "MVC Pattern", "Authentication"]}
+                />
+
+                <TechnologyCard
+                    icon={PhpIcon}
+                    title="PHP 8+"
+                    subtitle="Lenguaje Backend"
+                    description="Lenguaje de servidor para lógica de negocio, procesamiento de datos y gestión de autenticación de usuarios."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="MySQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Sistema de gestión de bases de datos relacional para almacenar y gestionar datos de usuarios, productos y transacciones."
+                />
+        </div>
+
+    </div>
+</LayoutContent>

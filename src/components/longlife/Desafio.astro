@@ -1,0 +1,99 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Creación de una Tienda Intuitiva
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Desarrollar una experiencia de compra fluida y atractiva que permitiera
+                a los usuarios navegar por productos nutricionales, visualizar detalles
+                y realizar compras de forma sencilla. Se implementó un catálogo dinámico
+                con filtrado, carrito de compras y proceso de checkout optimizado.
+            </p>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Integración de Stripe
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Implementar un sistema de pagos seguro y completo utilizando Stripe API.
+                Los principales retos incluyeron:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Gestión de webhooks para confirmación de pagos</li>
+                <li>Manejo de estados de transacción (pendiente, completado, fallido)</li>
+                <li>Integración de métodos de pago múltiples</li>
+                <li>Seguridad en el manejo de datos sensibles de tarjetas</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Sistema de Suscripciones Premium
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Crear un modelo de suscripción recurrente con Stripe Subscriptions que
+                permitiera a los usuarios acceder a contenido exclusivo. Desafíos resueltos:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Gestión de renovaciones automáticas mensuales/anuales</li>
+                <li>Control de estados de suscripción (activa, cancelada, vencida)</li>
+                <li>Sincronización entre Stripe y la base de datos local</li>
+                <li>Portal de cliente para gestionar suscripciones</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Panel de Administración
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Desarrollar un panel completo para gestionar toda la plataforma:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>CRUD de productos con gestión de imágenes y stock</li>
+                <li>Gestión de usuarios y roles (cliente, premium, administrador)</li>
+                <li>Visualización de transacciones y reportes de ventas</li>
+                <li>Control de contenido exclusivo para usuarios premium</li>
+                <li>Dashboard con métricas y estadísticas en tiempo real</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Lógica de Planes y Empleados
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Implementar un sistema complejo de planes nutricionales personalizados:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Asignación de nutricionistas (empleados) a clientes</li>
+                <li>Creación y gestión de planes personalizados por usuario</li>
+                <li>Sistema de calendario para seguimiento de planes</li>
+                <li>Comunicación entre clientes y nutricionistas</li>
+                <li>Gestión de disponibilidad y carga de trabajo de empleados</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Manejo de Estados Complejos
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Coordinar múltiples estados interrelacionados: autenticación de usuario,
+                estado de suscripción, carrito de compras, planes activos y rol de usuario.
+                Se implementó un sistema de gestión de estado reactivo con Vue 3 Composition
+                API y Pinia para mantener la consistencia de datos en toda la aplicación.
+            </p>
+        </div>
+    </div>
+</LayoutContent>
