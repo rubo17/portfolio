@@ -4,10 +4,26 @@ import ExtensionsPanel from "@components/side_menu/ExtensionsPanel";
 import SearchPanel from "@components/side_menu/SearchPanel";
 import SourceControlPanel from "@components/side_menu/SourceControlPanel";
 import SideBar from "@components/SideBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function PanelSwitcher() {
   const [activePanel, setActivePanel] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setActivePanel(null);
+      }
+    };
+
+    // Verificar al montar el componente
+    handleResize();
+
+    // Escuchar cambios de tamaño de ventana
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const renderPanel = () => {
     switch (activePanel) {
