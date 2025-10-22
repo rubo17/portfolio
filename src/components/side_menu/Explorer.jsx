@@ -92,7 +92,7 @@ function Folder({ item, level = 0, activeFile, setActiveFile }) {
         onClick={toggleOpen}
       >
         <FlechaFolder className={`w-3 h-3 mr-1 transition-transform ${open ? "-rotate-90" : ""}`} />
-        <span className="font-semibold text-gray-200">{item.name}</span>
+        <span className="font-semibold text-gray-200">{item.name}</span> 
       </div>
       {open && item.children && (
         <ul>
@@ -103,30 +103,28 @@ function Folder({ item, level = 0, activeFile, setActiveFile }) {
             ) : (
               <li
                 key={child.name + idx}
-                className={`flex items-center py-1 cursor-pointer ${
+                className={`cursor-pointer ${
                   activeFile === child.name
                     ? "text-accent font-bold"
-                    : "text-gray-400 hover:text-accent"
+                    : "text-gray-400 "
                 }`}
-                style={{ paddingLeft: (level + 1) * 16 }}
               >
                 {child.url ? (
-                  <a
+                  <a className="block w-full p-1 hover:text-accent"
                     href={child.url}
+                    style={{ paddingLeft: (level + 1) * 16 }}
                     onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
                       setActiveFile(child.name);
-                      navigate(child.url);
                     }}
                   >
                     {child.name}
                   </a>
                 ) : (
                   <a
+                  className="block w-full p-1 hover:text-accent"
                     href={`#${child.section || getSectionId(child.name)}`}
+                    style={{ paddingLeft: (level + 1) * 16 }}
                     onClick={(e) => {
-                      e.stopPropagation();
                       setActiveFile(child.name);
                     }}
                   >
