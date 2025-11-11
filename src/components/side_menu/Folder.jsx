@@ -4,6 +4,7 @@ import { getSectionId } from "./explorerData";
 
 export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
   const [open, setOpen] = useState(item.open);
+  const paddingLeft = level === 0 ? 12 : level * 16;
 
   // Cargar estado desde localStorage solo en el cliente
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
     <li className="">
       <div
         className="flex items-center cursor-pointer py-1 hover:bg-accent/10"
-        style={{ paddingLeft: level * 16 }}
+        style={{ paddingLeft }}
         onClick={toggleOpen}
       >
         <FlechaFolder className={`w-3 h-3 mr-1 transition-transform ${open ? "-rotate-90" : ""}`} />
