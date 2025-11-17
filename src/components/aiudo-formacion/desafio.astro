@@ -1,0 +1,85 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Plataforma E-commerce de Cursos
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Desarrollar una plataforma completa de venta de cursos online especializada en formación
+                para el cuidado de personas mayores. Se implementó un catálogo dinámico de cursos con
+                información detallada, sistema de categorías, carrito de compras y proceso de checkout
+                optimizado para maximizar las conversiones.
+            </p>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Integración de Stripe para Pagos
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Implementar un sistema de pagos robusto y seguro utilizando Stripe API.
+                Los principales retos incluyeron:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Integración de Stripe Checkout para procesamiento de pagos</li>
+                <li>Gestión de webhooks para confirmación de transacciones</li>
+                <li>Manejo de estados de pago (pendiente, completado, fallido, reembolsado)</li>
+                <li>Seguridad en el manejo de datos sensibles y cumplimiento PCI-DSS</li>
+                <li>Integración de múltiples métodos de pago (tarjetas, wallets digitales)</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Sistema de Cupones de Descuento
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Crear un sistema flexible de cupones para promociones y marketing. Desafíos resueltos:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Validación de cupones con reglas personalizables (porcentaje, fijo, envío gratis)</li>
+                <li>Control de fechas de validez y límites de uso por cupón</li>
+                <li>Aplicación de descuentos compatibles con el sistema de pagos de Stripe</li>
+                <li>Panel de administración para crear y gestionar cupones</li>
+                <li>Estadísticas de uso de cupones para análisis de marketing</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Blog Corporativo
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Desarrollar un blog integrado para contenido educativo y posicionamiento SEO:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Sistema CMS para crear, editar y publicar artículos desde el backend</li>
+                <li>Gestión de categorías, etiquetas y autores</li>
+                <li>Editor de contenido enriquecido con imágenes y multimedia</li>
+                <li>Optimización SEO con meta tags dinámicos y URLs amigables</li>
+                <li>Sistema de comentarios y engagement con lectores</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Arquitectura Full-Stack con Next.js y Laravel
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Implementar una arquitectura moderna separando frontend y backend. El frontend
+                desarrollado en Next.js proporciona renderizado del lado del servidor (SSR) para
+                mejor SEO y rendimiento, mientras que Laravel gestiona la API REST, autenticación,
+                base de datos y lógica de negocio. Se implementó un sistema de comunicación eficiente
+                entre ambas capas con manejo de errores y estados de carga optimizados.
+            </p>
+        </div>
+    </div>
+</LayoutContent>

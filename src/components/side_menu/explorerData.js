@@ -43,8 +43,19 @@ export const explorerItems = [
                   { type: "file", name: "desafio", url: "/my-projects/longLife/#desafio" },
                 ],
               },
+                {
+                type: "folder",
+                name: "aiudo-formacion",
+                open: false,
+                children: [
+                  { type: "file", name: "acerca", url: "/my-projects/aiudo-formacion/#acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/aiudo-formacion/#tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/aiudo-formacion/#desafio" },
+                ],
+              },
             ],
           },
+        
         ],
       }
     ],

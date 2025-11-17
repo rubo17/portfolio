@@ -1,0 +1,95 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import NextIcon from "@components/icons/Next.astro";
+import LaravelIcon from "@components/icons/Laravel.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import TypeScriptIcon from "@components/icons/TypeScript.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import PhpIcon from "@components/icons/Php.astro";
+import ReactIcon from "@components/icons/React.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de Aiudo Formación"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={NextIcon}
+                    title="Next.js"
+                    subtitle="Framework React"
+                    description="Framework de React para producción con renderizado del lado del servidor (SSR), generación estática (SSG) y optimización automática para mejor SEO y rendimiento."
+                    tags={["SSR", "SEO", "Performance"]}
+                />
+
+                <TechnologyCard
+                    icon={ReactIcon}
+                    title="React"
+                    subtitle="Biblioteca UI"
+                    description="Biblioteca de JavaScript para construir interfaces de usuario interactivas mediante componentes reutilizables y gestión eficiente del estado."
+                />
+
+                <TechnologyCard
+                    icon={TypeScriptIcon}
+                    title="TypeScript"
+                    subtitle="Lenguaje de Programación"
+                    description="Superset de JavaScript con tipado estático para mayor seguridad en el código, mejor autocompletado y detección temprana de errores."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS"
+                    subtitle="Framework CSS"
+                    description="Framework CSS utility-first para crear diseños modernos, responsive y personalizados de forma rápida y eficiente."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={LaravelIcon}
+                    title="Laravel"
+                    subtitle="Framework PHP"
+                    description="Framework PHP elegante y completo para desarrollo backend. Proporciona arquitectura MVC, ORM Eloquent, sistema de autenticación, colas y mucho más."
+                    tags={["RESTful API", "MVC", "Eloquent ORM"]}
+                />
+
+                <TechnologyCard
+                    icon={PhpIcon}
+                    title="PHP 8+"
+                    subtitle="Lenguaje Backend"
+                    description="Lenguaje de servidor robusto para lógica de negocio, procesamiento de pagos con Stripe, gestión de usuarios y sistema de cupones."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos & Pagos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos & Servicios</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="MySQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Sistema de gestión de bases de datos relacional para almacenar cursos, usuarios, transacciones, cupones y contenido del blog."
+                />
+
+                <TechnologyCard
+                    title="Stripe"
+                    subtitle="Plataforma de Pagos"
+                    description="API de procesamiento de pagos online segura y completa. Gestiona checkout, webhooks, múltiples métodos de pago y cumplimiento PCI."
+                    tags={["Payments", "Webhooks", "Security"]}
+                />
+            </div>
+        </div>
+    </div>
+</LayoutContent>

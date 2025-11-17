@@ -1,0 +1,60 @@
+---
+import ButtonProjectRedirect from "@components/shared/ButtonProjectRedirect.astro";
+import Carousel from "../shared/Carousel.jsx";
+import CodeIcon from "@components/icons/CodeIcon.astro";
+
+// Im�genes del proyecto Aiudo Formaci�n
+const projectImages = [
+    {
+        src: "/img/aiudo-formacion/inicio.png",
+        alt: "Página de inicio de Aiudo Formación",
+        description: "Página de inicio",
+    },
+    {
+        src: "/img/aiudo-formacion/cursos.png",
+        alt: "Catálogo de cursos",
+        description: "Catálogo de cursos disponibles",
+    },
+    {
+        src: "/img/aiudo-formacion/curso-info.png",
+        alt: "Información del curso",
+        description: "Detalle de curso con información completa",
+    },
+    {
+        src: "/img/aiudo-formacion/carrito.png",
+        alt: "Carrito de compras",
+        description: "Carrito de compras con cupones",
+    },
+    {
+        src: "/img/aiudo-formacion/finalizar-compra.png",
+        alt: "Finalizar compra",
+        description: "Proceso de checkout con Stripe",
+    },
+];
+---
+
+<section id="" class="mt-10">
+    <div
+        id="acerca"
+        class="flex flex-col gap-6 justify-center items-center mb-10"
+    >
+        <h1 class="text-4xl font-bold text-accent">Aiudo Formación</h1>
+        <p class="text-lg text-center max-w-3xl text-gray-300">
+            Plataforma de venta de cursos online especializada en formación para el cuidado de personas mayores.
+            Desarrollada para la empresa Aiudo, incluye sistema de cupones de descuento, blog corporativo e
+            integración completa con Stripe para procesamiento seguro de pagos.
+        </p>
+        <div class="flex flex-col md:flex-row gap-6">
+            <ButtonProjectRedirect
+                icon={CodeIcon}
+                text="Ver proyecto"
+                url="https://formacion.aiudo.es/"
+                external={true}
+            />
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <Carousel client:load images={projectImages} />
+    </div>
+</section>

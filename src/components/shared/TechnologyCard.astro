@@ -1,6 +1,6 @@
 ---
 interface Props {
-  icon: any;
+  icon?: any;
   title: string;
   subtitle?: string;
   description: string;
@@ -12,7 +12,7 @@ const { icon: Icon, title, subtitle, description, tags = [] } = Astro.props;
 
 <div class="bg-secondary p-5 rounded-lg border border-gray-700 hover:border-accent transition-all group">
   <div class="flex items-center gap-3 mb-3">
-    <Icon class="w-10 h-10" />
+    {Icon && <Icon class="w-10 h-10" />}
     <div>
       <h4 class="font-bold text-gray-200 text-lg">{title}</h4>
       {subtitle && <span class="text-xs text-accent">{subtitle}</span>}
