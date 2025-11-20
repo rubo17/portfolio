@@ -38,9 +38,9 @@ export const explorerItems = [
                 name: "longLife",
                 open: false,
                 children: [
-                  { type: "file", name: "acerca", url: "/my-projects/longLife/#acerca" },
-                  { type: "file", name: "tecnologias", url: "/my-projects/longLife/#tecnologias" },
-                  { type: "file", name: "desafio", url: "/my-projects/longLife/#desafio" },
+                  { type: "file", name: "acerca", url: "/my-projects/longLife/#acerca", id: "longLife/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/longLife/#tecnologias", id: "longLife/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/longLife/#desafio", id: "longLife/desafio" },
                 ],
               },
                 {
@@ -48,9 +48,9 @@ export const explorerItems = [
                 name: "aiudo-formacion",
                 open: false,
                 children: [
-                  { type: "file", name: "acerca", url: "/my-projects/aiudo-formacion/#acerca" },
-                  { type: "file", name: "tecnologias", url: "/my-projects/aiudo-formacion/#tecnologias" },
-                  { type: "file", name: "desafio", url: "/my-projects/aiudo-formacion/#desafio" },
+                  { type: "file", name: "acerca", url: "/my-projects/aiudo-formacion/#acerca", id: "aiudo-formacion/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/aiudo-formacion/#tecnologias", id: "aiudo-formacion/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/aiudo-formacion/#desafio", id: "aiudo-formacion/desafio" },
                 ],
               },
             ],

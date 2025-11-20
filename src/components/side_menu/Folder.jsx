@@ -50,7 +50,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
               <li
                 key={child.name + idx}
                 className={`cursor-pointer ${
-                  activeFile === child.name
+                  activeFile === (child.id || child.name)
                     ? "text-accent font-bold"
                     : "text-gray-400"
                 }`}
@@ -61,7 +61,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
                     href={child.url}
                     style={{ paddingLeft: (level + 1) * 16 }}
                     onClick={(e) => {
-                      setActiveFile(child.name);
+                      setActiveFile(child.id || child.name);
                     }}
                   >
                     {child.name}
@@ -72,7 +72,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
                     href={`#${child.section || getSectionId(child.name)}`}
                     style={{ paddingLeft: (level + 1) * 16 }}
                     onClick={(e) => {
-                      setActiveFile(child.name);
+                      setActiveFile(child.id || child.name);
                     }}
                   >
                     {child.name}

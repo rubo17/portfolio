@@ -22,7 +22,7 @@ export default function Explorer({ onClose }) {
           } else if (item.type === 'file' && item.url) {
             // Comparar la URL completa (path + hash)
             if (item.url === currentPath + currentHash || item.url === currentHash) {
-              return item.name;
+              return item.id || item.name;
             }
           }
         }
