@@ -1,0 +1,75 @@
+---
+import ButtonProjectRedirect from "@components/shared/ButtonProjectRedirect.astro";
+import CodeIcon from "@components/icons/CodeIcon.astro";
+import Carousel from "@components/shared/Carousel";
+const projectImages = [
+    {
+        src: "/img/barbertime/home.png",
+        alt: "Página de inicio de BarberTime",
+        description: "Página de inicio",
+    },
+    {
+        src: "/img/barbertime/commerces.png",
+        alt: "Barberias disponibles",
+        description: "Busca tu barberia y reserva tu cita",
+    },
+    {
+        src: "/img/barbertime/dashboard.png",
+        alt: "Dashboard de administración",
+        description: "Dashboard con estadísticas y métricas",
+    }
+];
+---
+
+<section id="acerca" class="mt-10">
+    <div
+        class="flex flex-col gap-6 justify-center items-center mb-10"
+    >
+        <h1 class="text-4xl font-bold text-accent">BarberTime</h1>
+        <p class="text-lg text-center max-w-3xl text-gray-300">
+            Aplicación web de gestión de citas para barberías. Permite a los
+            clientes reservar citas en sus barberías favoritas de forma rápida
+            y sencilla, mientras que los propietarios pueden centrarse en su
+            trabajo sin preocuparse por la gestión de agenda.
+        </p>
+        <div class="flex flex-col md:flex-row gap-6">
+            <ButtonProjectRedirect
+                icon={CodeIcon}
+                text="Ver Proyecto"
+                url="https://app.barbertime.es/"
+                external={true}
+            />
+        </div>
+
+    </div>
+            <div class="mt-10">
+        <Carousel client:load images={projectImages} />
+        </div>
+
+    <div class="mt-10 bg-secondary rounded-lg p-8">
+        <h3 class="text-xl font-bold text-accent mb-4 text-center">Funcionalidades Principales</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">📅</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Reserva de Citas</h4>
+                    <p class="text-gray-400 text-sm">Los clientes pueden ver disponibilidad en tiempo real y reservar su cita en segundos.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">💈</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Gestión de Barberías</h4>
+                    <p class="text-gray-400 text-sm">Panel de administración para gestionar servicios, horarios y empleados.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">📊</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Dashboard</h4>
+                    <p class="text-gray-400 text-sm">Estadísticas y métricas para optimizar el negocio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

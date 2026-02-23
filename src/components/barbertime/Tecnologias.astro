@@ -1,0 +1,87 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import NuxtIcon from "@components/icons/Nuxt.astro";
+import LaravelIcon from "@components/icons/Laravel.astro";
+import VueIcon from "@components/icons/Vue.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import TypeScript from "@components/icons/TypeScript.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import PhpIcon from "@components/icons/Php.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de BarberTime"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={NuxtIcon}
+                    title="Nuxt 3"
+                    subtitle="Framework Principal"
+                    description="Framework fullstack basado en Vue 3 con SSR, routing automático y optimización de rendimiento. Proporciona una experiencia de desarrollo fluida y un rendimiento óptimo."
+                />
+
+                <TechnologyCard
+                    icon={VueIcon}
+                    title="Vue 3"
+                    subtitle="UI Framework"
+                    description="Framework progresivo de JavaScript con Composition API para construir interfaces reactivas y componentes reutilizables."
+                />
+
+                <TechnologyCard
+                    icon={TypeScript}
+                    title="TypeScript"
+                    subtitle="Lenguaje Base"
+                    description="Tipado estático para mayor robustez del código, mejor autocompletado y detección temprana de errores."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS"
+                    subtitle="Estilos"
+                    description="Framework de utilidades CSS para crear interfaces modernas y responsive de forma rápida y consistente."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={LaravelIcon}
+                    title="Laravel"
+                    subtitle="Framework PHP"
+                    description="Framework PHP robusto y elegante para el desarrollo de la API REST. Incluye autenticación, validación, ORM Eloquent y sistema de colas para notificaciones."
+                    tags={["RESTful API", "Eloquent ORM", "Authentication"]}
+                />
+
+                <TechnologyCard
+                    icon={PhpIcon}
+                    title="PHP 8+"
+                    subtitle="Lenguaje Backend"
+                    description="Lenguaje de servidor con las últimas características como typed properties, match expressions y constructor promotion."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="MySQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Sistema de gestión de bases de datos para almacenar información de usuarios, barberías, servicios y reservas con relaciones complejas."
+                />
+            </div>
+        </div>
+    </div>
+</LayoutContent>

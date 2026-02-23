@@ -1,0 +1,72 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Sistema de Reservas en Tiempo Real
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Implementar un sistema de reservas que muestre disponibilidad actualizada
+                y evite conflictos de horarios. Los principales retos incluyeron:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Sincronización de disponibilidad entre múltiples clientes</li>
+                <li>Gestión de zonas horarias y horarios de apertura</li>
+                <li>Prevención de reservas duplicadas con bloqueo optimista</li>
+                <li>Calendario interactivo con slots disponibles</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Gestión Multi-Barbería
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Desarrollar una arquitectura que permita gestionar múltiples barberías,
+                cada una con sus propios empleados, servicios y horarios:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Sistema de roles (administrador, barbero, cliente)</li>
+                <li>Configuración independiente por establecimiento</li>
+                <li>Gestión de empleados y sus horarios de trabajo</li>
+                <li>Catálogo de servicios con precios y duraciones</li>
+            </ul>
+        </div>
+
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Experiencia de Usuario Fluida
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Diseñar una interfaz intuitiva que permita reservar una cita en
+                pocos pasos:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Flujo de reserva simplificado en 3 pasos</li>
+                <li>Búsqueda y filtrado de barberías cercanas</li>
+                <li>Visualización clara de servicios y precios</li>
+                <li>Historial de citas y posibilidad de repetir reservas</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                API RESTful con Laravel
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Desarrollar una API robusta y bien documentada que conecte el frontend
+                Nuxt con el backend Laravel. Se implementó autenticación con Laravel
+                Sanctum, validación de requests, manejo de errores consistente y
+                paginación eficiente para listados de barberías y citas.
+            </p>
+        </div>
+    </div>
+</LayoutContent>

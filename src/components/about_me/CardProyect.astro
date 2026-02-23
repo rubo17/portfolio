@@ -5,20 +5,21 @@ export interface CardProyectProps {
 	description: string;
 	image: string;
 	link: string;
+	linkExternal?: string;
 	icons: any[];
 	finish: boolean;
 }
-const { title, description, image, link, icons, finish } = Astro.props;
+const { title, description, image, link, linkExternal, icons, finish } = Astro.props;
 ---
 <div class="rounded-2xl bg-main overflow-hidden flex flex-col transition-transform hover:scale-[1.03] hover:shadow-2xl">
-	<a href={link} {...(finish ? { target: "_blank" } : {})} class="block">
+	<a href={linkExternal} {...(finish ? { target: "_blank" } : {})} class="block">
 		<img class="object-cover w-full h-48 md:h-56 lg:h-64 transition-all duration-300 hover:brightness-90" src={image} alt={title} />
 	</a>
 	<div class="p-6 flex flex-col gap-3 flex-1">
 		<h2 class="text-2xl font-bold text-accent mb-1">{title}</h2>
 		<p class="text-primaryText text-base mb-2">{description}</p>
 		<div class="flex items-center justify-between mt-auto">
-			<a href={link} {...(finish ? { target: "_blank" } : {})} class="inline-block text-accent font-semibold hover:underline hover:text-sky-400 transition-colors">Ver más</a>
+			<a href={link} class="inline-block text-accent font-semibold hover:underline hover:text-sky-400 transition-colors">Ver más</a>
 			<div class="flex gap-3 p-2 rounded-full bg-secondary border border-accent">
 				{icons.map((Icon:any, i:any) => <Icon class="w-7 h-7 text-accent" key={i} />)}
 			</div>

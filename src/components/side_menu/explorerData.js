@@ -52,6 +52,15 @@ export const explorerItems = [
                   { type: "file", name: "tecnologias", url: "/my-projects/aiudo-formacion/#tecnologias", id: "aiudo-formacion/tecnologias" },
                   { type: "file", name: "desafio", url: "/my-projects/aiudo-formacion/#desafio", id: "aiudo-formacion/desafio" },
                 ],
+              },{
+                type: "folder",
+                name: "barbertime",
+                open: false,
+                children: [
+                  { type: "file", name: "acerca", url: "/my-projects/barbertime/#acerca", id: "barbertime/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/barbertime/#tecnologias", id: "barbertime/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/barbertime/#desafio", id: "barbertime/desafio" },
+                ],
               },
             ],
           },
