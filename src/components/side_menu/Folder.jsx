@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import FlechaFolder from "@components/icons/FlechaFolder";
 import { getSectionId } from "./explorerData";
 
-export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
+export default function Folder({ item, level = 0, activeFile, setActiveFile, onClose }) {
   const [open, setOpen] = useState(item.open);
   const paddingLeft = level === 0 ? 12 : level * 16;
 
@@ -23,6 +23,10 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
     if (typeof window !== 'undefined') {
       localStorage.setItem(`folder-${item.name}`, JSON.stringify(newState));
     }
+  };
+  const handleLinkClick = (item,onClose) => {
+    setActiveFile(item.id || item.name);
+    onClose(); 
   };
 
   return (
@@ -45,6 +49,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
                 level={level + 1}
                 activeFile={activeFile}
                 setActiveFile={setActiveFile}
+                onClose={onClose}
               />
             ) : (
               <li
@@ -60,9 +65,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
                     className="block w-full p-1 hover:text-accent"
                     href={child.url}
                     style={{ paddingLeft: (level + 1) * 16 }}
-                    onClick={(e) => {
-                      setActiveFile(child.id || child.name);
-                    }}
+                    onClick={() => handleLinkClick(child, onClose)}
                   >
                     {child.name}
                   </a>
@@ -71,9 +74,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile }) {
                     className="block w-full p-1 hover:text-accent"
                     href={`#${child.section || getSectionId(child.name)}`}
                     style={{ paddingLeft: (level + 1) * 16 }}
-                    onClick={(e) => {
-                      setActiveFile(child.id || child.name);
-                    }}
+                    onClick={() => handleLinkClick(child, onClose)}
                   >
                     {child.name}
                   </a>

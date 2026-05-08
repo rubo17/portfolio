@@ -11,6 +11,8 @@ export default function PanelSwitcher() {
 
   useEffect(() => {
     const handleResize = () => {
+
+      console.log("Window resized:", window.innerWidth);
       if (window.innerWidth < 768) {
         setActivePanel(null);
       }

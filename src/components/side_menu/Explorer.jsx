@@ -70,6 +70,7 @@ export default function Explorer({ onClose }) {
               item={item}
               activeFile={activeFile}
               setActiveFile={setActiveFile}
+              onClose={onClose}
             />) : null
         )}
       </ul>
