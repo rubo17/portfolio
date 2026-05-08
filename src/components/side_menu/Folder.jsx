@@ -24,9 +24,9 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile, onC
       localStorage.setItem(`folder-${item.name}`, JSON.stringify(newState));
     }
   };
-  const handleLinkClick = (item,onClose) => {
+  const handleLinkClick = (item, onClose) => {
     setActiveFile(item.id || item.name);
-    onClose(); 
+    if (item.url.includes("#")) onClose();
   };
 
   return (
