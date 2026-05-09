@@ -8,22 +8,17 @@ import { useState, useEffect } from "react";
 
 export default function PanelSwitcher() {
   const [activePanel, setActivePanel] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-
-      console.log("Window resized:", window.innerWidth);
-      if (window.innerWidth < 768) {
-        setActivePanel(null);
-      }
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (mobile) setActivePanel(null);
     };
 
-    // Verificar al montar el componente
     handleResize();
-
-    // Escuchar cambios de tamaño de ventana
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -41,6 +36,12 @@ export default function PanelSwitcher() {
   return (
     <div className="flex h-full">
       <SideBar active={activePanel} setActive={setActivePanel} />
+      {activePanel !== null && isMobile && (
+        <div
+          className="fixed inset-0 z-10"
+          onClick={() => setActivePanel(null)}
+        />
+      )}
       {renderPanel()}
     </div>
   );

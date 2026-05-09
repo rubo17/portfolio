@@ -42,7 +42,7 @@ export default function Explorer({ onClose }) {
     const handleNavigation = () => {
       setTimeout(updateActiveFromUrl, 50); // Pequeño delay para asegurar que la URL se actualizó
     };
-
+    
     window.addEventListener('hashchange', handleNavigation);
     document.addEventListener('astro:page-load', handleNavigation);
     document.addEventListener('astro:after-swap', handleNavigation);
