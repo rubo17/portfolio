@@ -26,7 +26,7 @@ export default function Folder({ item, level = 0, activeFile, setActiveFile, onC
   };
   const handleLinkClick = (item, onClose) => {
     setActiveFile(item.id || item.name);
-    if (item.url.includes("#")) onClose();
+    if (item.url.includes("#") && window.innerWidth < 768) onClose();
   };
 
   return (

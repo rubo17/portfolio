@@ -71,7 +71,7 @@ export default function MenuTabs({ currentPage = "About me" }) {
               </span>
               <span
                 onClick={(e) => deleteTab(tab, e)}
-                className="opacity-0 group-hover:opacity-100 transition hover:bg-gray-700 rounded p-1"
+                className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition hover:bg-gray-700 rounded p-1"
               >
                 <Cerrar />
               </span>
