@@ -1,0 +1,94 @@
+---
+import Carousel from "@components/shared/Carousel";
+const projectImages = [
+    {
+        src: "/img/habitcore/habits.png",
+        alt: "Vista de hábitos diarios",
+        description: "Lista de hábitos y seguimiento diario",
+    },
+    {
+        src: "/img/habitcore/createhabit.png",
+        alt: "Crear nuevo hábito",
+        description: "Formulario para definir un hábito personalizado",
+    },
+    {
+        src: "/img/habitcore/statsDesktop.png",
+        alt: "Estadísticas en escritorio",
+        description: "Dashboard de estadísticas y progreso",
+    },
+    {
+        src: "/img/habitcore/settings.png",
+        alt: "Configuración de la aplicación",
+        description: "Panel de configuración y preferencias",
+    },
+];
+---
+
+<section id="acerca" class="mt-10">
+    <div class="flex flex-col gap-6 justify-center items-center mb-10">
+        <h1 class="text-4xl font-bold text-accent">HabitCore</h1>
+        <p class="text-lg text-center max-w-3xl text-gray-300">
+            Aplicación web progresiva (PWA) para crear y seguir hábitos diarios.
+            Permite definir hábitos personalizados, registrar su cumplimiento cada día,
+            organizarlos por categorías y consultar estadísticas de progreso. Instalable
+            en móvil y escritorio, con recordatorios mediante notificaciones push.
+        </p>
+        <div class="flex gap-3 flex-wrap justify-center">
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">PWA</span>
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">Notificaciones Push</span>
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">Instalable</span>
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <Carousel client:load images={projectImages} />
+    </div>
+
+    <div class="mt-10 bg-secondary rounded-lg p-8">
+        <h3 class="text-xl font-bold text-accent mb-4 text-center">Funcionalidades Principales</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">✅</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Seguimiento Diario</h4>
+                    <p class="text-gray-400 text-sm">Registra el cumplimiento de cada hábito día a día con un simple toque.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">🗂️</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Categorías Personalizadas</h4>
+                    <p class="text-gray-400 text-sm">Organiza tus hábitos en categorías para mantenerlos ordenados y localizables.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">📊</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Estadísticas de Progreso</h4>
+                    <p class="text-gray-400 text-sm">Visualiza rachas, porcentajes de cumplimiento y evolución a lo largo del tiempo.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">🔔</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Recordatorios Push</h4>
+                    <p class="text-gray-400 text-sm">Notificaciones push para recordarte cuándo completar tus hábitos, incluso con la app cerrada.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">📱</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">PWA Instalable</h4>
+                    <p class="text-gray-400 text-sm">Instálala como app nativa en tu móvil o escritorio sin pasar por ninguna tienda de aplicaciones.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">⚙️</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Configuración Flexible</h4>
+                    <p class="text-gray-400 text-sm">Personaliza frecuencias, horarios de recordatorio y preferencias de cada hábito.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

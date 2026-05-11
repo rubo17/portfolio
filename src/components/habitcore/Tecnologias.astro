@@ -1,0 +1,101 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import VueIcon from "@components/icons/Vue.astro";
+import LaravelIcon from "@components/icons/Laravel.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import TypeScript from "@components/icons/TypeScript.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import PhpIcon from "@components/icons/Php.astro";
+import GitIcon from "@components/icons/Git.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de HabitCore"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={VueIcon}
+                    title="Vue 3"
+                    subtitle="UI Framework"
+                    description="Framework progresivo de JavaScript con Composition API para construir interfaces reactivas, fluidas y orientadas a componentes reutilizables."
+                />
+
+                <TechnologyCard
+                    icon={TypeScript}
+                    title="TypeScript"
+                    subtitle="Lenguaje Base"
+                    description="Tipado estático para mayor robustez del código, mejor autocompletado y detección temprana de errores en tiempo de desarrollo."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS"
+                    subtitle="Estilos"
+                    description="Framework de utilidades CSS para crear interfaces modernas y totalmente responsive de forma rápida y consistente."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={LaravelIcon}
+                    title="Laravel"
+                    subtitle="Framework PHP"
+                    description="Framework PHP robusto para la API REST. Gestiona autenticación, lógica de negocio, envío de notificaciones push y suscripciones Web Push."
+                    tags={["RESTful API", "Eloquent ORM", "Web Push"]}
+                />
+
+                <TechnologyCard
+                    icon={PhpIcon}
+                    title="PHP 8+"
+                    subtitle="Lenguaje Backend"
+                    description="Lenguaje de servidor aprovechando las últimas características: typed properties, match expressions y constructor promotion para un código más limpio."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="MySQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Sistema de gestión de bases de datos relacionales para almacenar hábitos, registros diarios, categorías, usuarios y suscripciones push."
+                />
+            </div>
+        </div>
+
+        <!-- DevOps & Herramientas -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Control de Versiones</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={GitIcon}
+                    title="Git"
+                    subtitle="Control de Versiones"
+                    description="Gestión del historial de cambios, ramas de desarrollo y flujo de trabajo colaborativo durante todo el proyecto."
+                />
+
+                <TechnologyCard
+                    icon={GithubIcon}
+                    title="GitHub"
+                    subtitle="Repositorio Remoto"
+                    description="Plataforma de alojamiento del código con revisión de pull requests, issues y gestión del proyecto."
+                />
+            </div>
+        </div>
+    </div>
+</LayoutContent>

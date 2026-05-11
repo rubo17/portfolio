@@ -1,0 +1,72 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Notificaciones Push como PWA
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Implementar notificaciones push nativas en una PWA requirió integrar la
+                Web Push API en el frontend y el backend. Los principales retos incluyeron:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Generación y gestión de claves VAPID en Laravel</li>
+                <li>Registro del Service Worker y suscripción al push en Vue</li>
+                <li>Persistencia de suscripciones por usuario en base de datos</li>
+                <li>Envío de notificaciones programadas según el horario de cada hábito</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Experiencia PWA Instalable
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Lograr que la aplicación funcionase como una app nativa instalable en
+                cualquier dispositivo supuso configurar correctamente el manifest y el
+                Service Worker:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Configuración del Web App Manifest con iconos y tema de color</li>
+                <li>Estrategia de caché offline con el Service Worker</li>
+                <li>Cumplimiento de los criterios de instalabilidad de Chrome y Safari</li>
+                <li>Experiencia fluida tanto en móvil como en escritorio</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Seguimiento y Estadísticas de Hábitos
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Diseñar un modelo de datos eficiente para calcular rachas, porcentajes
+                y evolución histórica sin comprometer el rendimiento:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Modelo relacional optimizado para consultas de registros diarios</li>
+                <li>Cálculo de rachas consecutivas en el backend</li>
+                <li>Visualización de progreso con gráficos interactivos en Vue</li>
+                <li>Filtrado por categoría y rango de fechas</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                API RESTful con Laravel
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Se desarrolló una API robusta que conecta el frontend Vue con el backend
+                Laravel, implementando autenticación con Laravel Sanctum, validación de
+                requests, manejo de errores consistente y endpoints dedicados para la
+                gestión de hábitos, registros diarios, categorías y suscripciones push.
+            </p>
+        </div>
+    </div>
+</LayoutContent>

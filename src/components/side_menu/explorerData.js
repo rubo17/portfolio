@@ -61,6 +61,15 @@ export const explorerItems = [
                   { type: "file", name: "tecnologias", url: "/my-projects/barbertime/#tecnologias", id: "barbertime/tecnologias" },
                   { type: "file", name: "desafio", url: "/my-projects/barbertime/#desafio", id: "barbertime/desafio" },
                 ],
+              },{
+                type: "folder",
+                name: "habitcore",
+                open: false,
+                children: [
+                  { type: "file", name: "acerca", url: "/my-projects/habitcore/#acerca", id: "habitcore/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/habitcore/#tecnologias", id: "habitcore/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/habitcore/#desafio", id: "habitcore/desafio" },
+                ],
               },
             ],
           },
