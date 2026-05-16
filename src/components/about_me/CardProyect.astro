@@ -11,17 +11,38 @@ export interface CardProyectProps {
 }
 const { title, description, image, link, linkExternal, icons, finish } = Astro.props;
 ---
-<div class="rounded-2xl bg-main overflow-hidden flex flex-col transition-transform hover:scale-[1.03] hover:shadow-2xl">
-	<a href={linkExternal} {...(finish ? { target: "_blank" } : {})} class="block">
-		<img class="object-cover w-full h-48 md:h-56 lg:h-64 transition-all duration-300 hover:brightness-90" src={image} alt={title} />
-	</a>
-	<div class="p-6 flex flex-col gap-3 flex-1">
-		<h2 class="text-2xl font-bold text-accent mb-1">{title}</h2>
-		<p class="text-primaryText text-base mb-2">{description}</p>
-		<div class="flex items-center justify-between mt-auto">
-			<a href={link} class="inline-block text-accent font-semibold hover:underline hover:text-sky-400 transition-colors">Ver más</a>
-			<div class="flex gap-3 p-2 rounded-full bg-secondary border border-accent">
-				{icons.map((Icon:any, i:any) => <Icon class="w-7 h-7 text-accent" key={i} />)}
+<div class="rounded-2xl bg-main overflow-hidden flex flex-col border border-secondary transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-accent/40 group">
+	<div class="relative overflow-hidden bg-secondary aspect-video">
+		<a href={linkExternal} {...(finish ? { target: "_blank" } : {})} class="block w-full h-full">
+			<img
+				class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+				src={image}
+				alt={title}
+			/>
+			<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+				<span class="text-white font-semibold bg-accent/20 backdrop-blur-sm border border-accent/50 px-5 py-2 rounded-full text-sm tracking-wide">
+					Ver proyecto ↗
+				</span>
+			</div>
+		</a>
+		<div class={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${finish ? 'bg-green-500/80 text-white' : 'bg-yellow-400/80 text-black'}`}>
+			{finish ? 'Completado' : 'En progreso'}
+		</div>
+	</div>
+
+	<div class="p-5 flex flex-col gap-2 flex-1">
+		<h2 class="text-xl font-bold text-accent">{title}</h2>
+		<p class="text-primaryText text-sm leading-relaxed flex-1">{description}</p>
+		<div class="flex items-center justify-between pt-4 mt-2 border-t border-secondary">
+			<a href={link} class="inline-flex items-center gap-1 text-accent text-sm font-semibold hover:text-sky-400 hover:underline transition-colors">
+				Ver más →
+			</a>
+			<div class="flex gap-2">
+				{icons.map((Icon: any) => (
+					<div class="p-1.5 rounded-lg bg-secondary border border-accent/20 hover:border-accent/60 transition-colors">
+						<Icon class="w-5 h-5 text-accent" />
+					</div>
+				))}
 			</div>
 		</div>
 	</div>
