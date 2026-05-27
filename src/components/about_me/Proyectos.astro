@@ -6,6 +6,7 @@ import Vue from "@components/icons/Vue.astro";
 import LayoutContent from "@components/LayoutContent.astro";
 import CardProyect from "@components/about_me/CardProyect.astro";
 import Nuxt from "@components/icons/Nuxt.astro";
+import Nest from "@components/icons/Nest.astro";
 ---
 
 <LayoutContent 
@@ -14,6 +15,24 @@ import Nuxt from "@components/icons/Nuxt.astro";
   description="Mis proyectos mas destacados"
 >
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <CardProyect
+      title="Barber Time"
+      description="Proyecto para automatizar citas de barberos"
+      image="/barbertime.png"
+      linkExternal="https://app.barbertime.es/"
+      link="/my-projects/barbertime"
+      icons={[Nuxt, Laravel]}
+      finish={true}
+    />    
+    <CardProyect
+      title="Formación aiudo"
+      description="Proyecto para empresa de cursos"
+      image="/aiudoProyecto.PNG"
+      linkExternal="https://formacion.aiudo.es/"
+      link="/my-projects/aiudo-formacion"
+      icons={[Next, Laravel]}
+      finish={true}
+    />
     <CardProyect
       title="Longlife"
       description="Mi proyecto de nutrición"
@@ -24,24 +43,6 @@ import Nuxt from "@components/icons/Nuxt.astro";
       finish={true}
     />
     <CardProyect
-      title="Formación aiudo"
-      description="Proyecto para empresa de cursos"
-      image="/aiudoProyecto.PNG"
-      linkExternal="https://formacion.aiudo.es/"
-      link="/my-projects/aiudo-formacion"
-      icons={[Next, Laravel]}
-      finish={true}
-    />
-        <CardProyect
-      title="Barber Time"
-      description="Proyecto para automatizar citas de barberos"
-      image="/barbertime.png"
-      linkExternal="https://app.barbertime.es/"
-      link="/my-projects/barbertime"
-      icons={[Nuxt, Laravel]}
-      finish={true}
-    />
-    <CardProyect
       title="HabitCore"
       description="PWA para crear y seguir hábitos diarios con notificaciones push y estadísticas de progreso"
       image="/img/habitcore/habits.png"
@@ -49,6 +50,14 @@ import Nuxt from "@components/icons/Nuxt.astro";
       link="/my-projects/habitcore"
       icons={[Vue, Laravel]}
       finish={true}
+    />
+        <CardProyect
+      title="Kbre"
+      description="Aplicacion de automatizacion de citas con integracion de whatsapp y google calendar"
+      image="/img/kbre/login.png"
+      link="#proyectos"
+      icons={[Next, Nest]}
+      finish={false}
     />
   </div>
 </LayoutContent>

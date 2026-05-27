@@ -19,11 +19,15 @@ const { title, description, image, link, linkExternal, icons, finish } = Astro.p
 				src={image}
 				alt={title}
 			/>
-			<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-				<span class="text-white font-semibold bg-accent/20 backdrop-blur-sm border border-accent/50 px-5 py-2 rounded-full text-sm tracking-wide">
-					Ver proyecto ↗
-				</span>
-			</div>
+			{
+				linkExternal && (
+					<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+						<span class="text-white font-semibold bg-accent/20 backdrop-blur-sm border border-accent/50 px-5 py-2 rounded-full text-sm tracking-wide">
+							Ver proyecto ↗
+						</span>
+					</div>
+				)
+			}
 		</a>
 		<div class={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${finish ? 'bg-green-500/80 text-white' : 'bg-yellow-400/80 text-black'}`}>
 			{finish ? 'Completado' : 'En progreso'}
