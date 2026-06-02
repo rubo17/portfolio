@@ -3,7 +3,7 @@ name: 🚀 Deploy Astro to Hostinger
 on:
   push:
     branches:
-      - main   # rama que uses para producciónn
+      - main   # rama que uses para producción
 
 jobs:
   deploy:
