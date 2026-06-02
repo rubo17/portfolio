@@ -24,11 +24,11 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ secrets.FTP_SERVER }}      # tu host FTP
+          server: 89.116.147.129     # tu host FTP
           username: ${{ secrets.FTP_USERNAME }}  # tu usuario FTP
           password: ${{ secrets.FTP_PASSWORD }}  # tu contraseña FTP
-          port: ${{ secrets.FTP_PORT }}          # usualmente 21
-          protocol: ftp
+          port: 21        # usualmente 21
+          protocol: ftps
           local-dir: ./dist/                     # Astro generas aquí la wedb final
           server-dir: /public_html/       # carpetaa raíz de tu dominio en Hostingerr
       - name: Debug
