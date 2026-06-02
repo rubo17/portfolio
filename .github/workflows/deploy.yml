@@ -22,7 +22,7 @@ jobs:
 
       # 3️⃣ Subir la carpeta dist/ a Hostinger vía FTP
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}      # tu host FTP
           username: ${{ secrets.FTP_USERNAME }}  # tu usuario FTP
