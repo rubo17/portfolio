@@ -22,7 +22,7 @@ jobs:
 
       # 3️⃣ Subir la carpeta dist/ a Hostinger vía FTP
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_SERVER }}      # tu host FTP
           username: ${{ secrets.FTP_USERNAME }}  # tu usuario FTP
@@ -31,3 +31,7 @@ jobs:
           protocol: ftp
           local-dir: ./dist/                     # Astro generas aquí la wedb final
           server-dir: /public_html/       # carpetaa raíz de tu dominio en Hostingerr
+      - name: Debug
+        run: |
+          echo "SERVER=${{ secrets.FTP_SERVER }}"
+          echo "PORT=${{ secrets.FTP_PORT }}"
