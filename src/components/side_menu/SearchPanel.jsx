@@ -1,13 +1,28 @@
 import PanelSection from "@components/side_menu/PanelSection";
-import { useState } from "react";
+import ProjectResultCard from "@components/side_menu/ProjectResultCard";
+import { projects } from "@data/projects.js";
+import { useMemo, useState } from "react";
+
+const normalize = (text) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 
 export default function SearchPanel() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filters, setFilters] = useState({
-    matchCase: false,
-    matchWholeWord: false,
-    useRegex: false
-  });
+
+  const results = useMemo(() => {
+    const term = normalize(searchTerm.trim());
+    if (!term) return [];
+
+    return projects.filter((project) => {
+      const haystack = normalize(
+        [project.title, project.description, ...(project.icons ?? [])].join(" ")
+      );
+      return haystack.includes(term);
+    });
+  }, [searchTerm]);
 
   return (
     <PanelSection>
@@ -25,62 +40,37 @@ export default function SearchPanel() {
           />
         </div>
 
-        {/* Filter Options */}
-        <div className="flex gap-2 mb-4">
-          <button
-            onClick={() => setFilters(f => ({ ...f, matchCase: !f.matchCase }))}
-            className={`px-2 py-1 text-xs rounded border ${
-              filters.matchCase
-                ? 'bg-accent/20 border-accent text-accent'
-                : 'border-gray-700 text-gray-400 hover:border-gray-500'
-            }`}
-            title="Coincidir mayúsculas/minúsculas"
-          >
-            Aa
-          </button>
-          <button
-            onClick={() => setFilters(f => ({ ...f, matchWholeWord: !f.matchWholeWord }))}
-            className={`px-2 py-1 text-xs rounded border ${
-              filters.matchWholeWord
-                ? 'bg-accent/20 border-accent text-accent'
-                : 'border-gray-700 text-gray-400 hover:border-gray-500'
-            }`}
-            title="Coincidir palabra completa"
-          >
-            |ab|
-          </button>
-          <button
-            onClick={() => setFilters(f => ({ ...f, useRegex: !f.useRegex }))}
-            className={`px-2 py-1 text-xs rounded border ${
-              filters.useRegex
-                ? 'bg-accent/20 border-accent text-accent'
-                : 'border-gray-700 text-gray-400 hover:border-gray-500'
-            }`}
-            title="Usar expresión regular"
-          >
-            .*
-          </button>
-        </div>
-
-        {/* Search Results Placeholder */}
+        {/* Search Results */}
         <div className="mt-4">
-          <p className="text-gray-500 text-xs italic">
-            {searchTerm
-              ? `Buscando "${searchTerm}"...`
-              : "Introduce un término para buscar proyectos"}
-          </p>
+          {!searchTerm.trim() && (
+            <p className="text-gray-500 text-xs italic">
+              Introduce un término para buscar proyectos
+            </p>
+          )}
 
-          {/* Future project results will appear here */}
-          <div className="mt-4 space-y-2">
-            {/* Placeholder for future implementation */}
-            {searchTerm && (
-              <div className="text-gray-600 text-xs">
-                <p>Próximamente: Resultados de búsqueda de proyectos</p>
-              </div>
-            )}
-          </div>
+          {searchTerm.trim() && (
+            <p className="text-gray-500 text-xs mb-2">
+              {results.length > 0
+                ? `${results.length} resultado${results.length === 1 ? "" : "s"} para "${searchTerm}"`
+                : `Sin resultados para "${searchTerm}"`}
+            </p>
+          )}
+
+          {results.length > 0 && (
+            <div className="flex flex-col gap-2">
+              {results.map((project) => (
+                <ProjectResultCard key={project.title} project={project} />
+              ))}
+            </div>
+          )}
+
+          {searchTerm.trim() && results.length === 0 && (
+            <p className="text-gray-600 text-xs">
+              Prueba con otro nombre de proyecto o tecnología.
+            </p>
+          )}
         </div>
       </div>
     </PanelSection>
-  )
+  );
 }
