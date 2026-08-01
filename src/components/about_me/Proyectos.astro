@@ -26,7 +26,7 @@ const iconMap = { Codeigniter, Laravel, Next, Vue, Nuxt, Nest };
           image={project.image}
           linkExternal={project.linkExternal}
           link={project.link}
-          icons={project.icons.map((name) => iconMap[name])}
+          icons={project.icons.map((name) => iconMap[name as keyof typeof iconMap])}
           finish={project.finish}
         />
       ))
