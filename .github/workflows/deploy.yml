@@ -1,4 +1,4 @@
-name: 🚀 Deploy Astro to Hostinger #prueba deploy (fallan imagenes)
+name: 🚀 Deploy Astro to Hostinger #prueba deploy
 
 on:
   push:
