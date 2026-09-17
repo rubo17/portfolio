@@ -4,15 +4,32 @@ import { buildPortfolioContext } from "../src/data/chatbotContext.js";
 const GEMINI_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
 
-function setCorsHeaders(res) {
-  const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+// Orígenes de desarrollo local, siempre permitidos además del/de los definidos en ALLOWED_ORIGIN.
+const DEV_ORIGINS = ["http://localhost:4321", "http://localhost:4322", "http://localhost:4323"];
+
+function resolveAllowedOrigin(req) {
+  const configured = (process.env.ALLOWED_ORIGIN || "")
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const allowList = [...configured, ...DEV_ORIGINS];
+  const requestOrigin = req.headers.origin;
+
+  if (requestOrigin && allowList.includes(requestOrigin)) {
+    return requestOrigin;
+  }
+  return configured[0] || "*";
+}
+
+function setCorsHeaders(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", resolveAllowedOrigin(req));
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Vary", "Origin");
 }
 
 export default async function handler(req, res) {
-  setCorsHeaders(res);
+  setCorsHeaders(req, res);
 
   if (req.method === "OPTIONS") {
     res.status(204).end();
