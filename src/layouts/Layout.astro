@@ -3,6 +3,7 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import MenuTabs from "@components/MenuTabs.jsx";
 import PanelSwitcher from "@components/side_menu/PanelSwicher";
+import ChatBot from "@components/shared/ChatBot.jsx";
 import { ClientRouter, ViewTransitions } from 'astro:transitions';
 
 import "@styles/global.css";
@@ -39,6 +40,7 @@ const { pageName = "About me" } = Astro.props;
 					<slot />
 				</div>
 			</div>
+			<ChatBot client:load />
 		</main>
 
 		<Footer class="fixed bottom-0 left-0 w-full z-50" />
