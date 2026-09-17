@@ -1,6 +1,4 @@
-// Función serverless de Vercel: recibe el mensaje del chatbot, lo envía a la API
-// de Google Gemini junto al contexto del portfolio, y devuelve la respuesta.
-// La API key nunca llega al navegador: solo vive en las env vars de Vercel.
+
 import { buildPortfolioContext } from "../src/data/chatbotContext.js";
 
 const GEMINI_URL =
