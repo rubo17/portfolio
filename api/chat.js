@@ -55,7 +55,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         system_instruction: { parts: [{ text: buildPortfolioContext() }] },
         contents,
-        generationConfig: { maxOutputTokens: 300, temperature: 0.7 },
+        generationConfig: { maxOutputTokens: 800, temperature: 0.7 },
       }),
     });
 
