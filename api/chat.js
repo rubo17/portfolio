@@ -69,6 +69,11 @@ export default async function handler(req, res) {
     const data = await response.json();
     const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
 
+    if (req.query?.debug === "1") {
+      res.status(200).json({ raw: data });
+      return;
+    }
+
     res.status(200).json({ reply: reply || "Lo siento, no he podido generar una respuesta." });
   } catch (err) {
     console.error("Chat function error:", err);
