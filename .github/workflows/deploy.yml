@@ -16,6 +16,8 @@ jobs:
 
       # 2️⃣ Instalar dependencias y construir Astro
       - name: Install dependencies & Build Astro
+        env:
+          PUBLIC_CHATBOT_API_URL: ${{ secrets.PUBLIC_CHATBOT_API_URL }}
         run: |
           npm install
           npm run build
