@@ -70,6 +70,15 @@ export const explorerItems = [
                   { type: "file", name: "tecnologias", url: "/my-projects/habitcore/#tecnologias", id: "habitcore/tecnologias" },
                   { type: "file", name: "desafio", url: "/my-projects/habitcore/#desafio", id: "habitcore/desafio" },
                 ],
+              },{
+                type: "folder",
+                name: "el-equilibrio",
+                open: false,
+                children: [
+                  { type: "file", name: "acerca", url: "/my-projects/el-equilibrio/#acerca", id: "el-equilibrio/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/el-equilibrio/#tecnologias", id: "el-equilibrio/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/el-equilibrio/#desafio", id: "el-equilibrio/desafio" },
+                ],
               },
             ],
           },

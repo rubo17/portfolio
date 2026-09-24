@@ -1,0 +1,134 @@
+---
+import ButtonProjectRedirect from "@components/shared/ButtonProjectRedirect.astro";
+import CodeIcon from "@components/icons/CodeIcon.astro";
+import Carousel from "@components/shared/Carousel";
+const projectImages = [
+    {
+        src: "/img/el-equilibrio/inicio.png",
+        alt: "Pantalla de inicio del grupo",
+        description: "Inicio con accesos rápidos y próximo evento",
+    },
+    {
+        src: "/img/el-equilibrio/eventos.png",
+        alt: "Listado de eventos",
+        description: "Eventos próximos y pasados con asistentes",
+    },
+    {
+        src: "/img/el-equilibrio/puntos.png",
+        alt: "Registro de puntos en un evento",
+        description: "Puntos por categoría registrados en cada evento",
+    },
+    {
+        src: "/img/el-equilibrio/ranking.png",
+        alt: "Clasificación del grupo",
+        description: "Podio y clasificación en directo",
+    },
+    {
+        src: "/img/el-equilibrio/perfil.png",
+        alt: "Perfil de usuario con nivel",
+        description: "Perfil con nivel, progreso y estadísticas",
+    },
+    {
+        src: "/img/el-equilibrio/admin.png",
+        alt: "Panel de administración de categorías",
+        description: "Configuración de categorías de puntuación",
+    },
+];
+---
+
+<section id="acerca" class="mt-10">
+    <div class="flex flex-col gap-6 justify-center items-center mb-10">
+        <h1 class="text-4xl font-bold text-accent">El Equilibrio</h1>
+        <p class="text-lg text-center max-w-3xl text-gray-300">
+            Aplicación web que convierte las fiestas de un grupo de amigos en una liga.
+            Nació de un pique entre amigos por ver quién iba a más planes: en lugar de
+            llevar la cuenta en el chat, cada grupo crea sus eventos, suma puntos por
+            asistir y por cada momento de la noche, y compite en una clasificación con
+            niveles, histórico y temporadas.
+        </p>
+        <div class="flex gap-3 flex-wrap justify-center">
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">Gamificación</span>
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">Multigrupo</span>
+            <span class="bg-accent/10 text-accent border border-accent/30 px-4 py-1.5 rounded-full text-sm font-semibold">Mobile First</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <ButtonProjectRedirect
+                icon={CodeIcon}
+                text="Ver Proyecto"
+                url="https://fiestas-equilibrio-roan.vercel.app/"
+                external={true}
+            />
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <Carousel client:load images={projectImages} fit="contain" />
+    </div>
+
+    <div class="mt-10 bg-secondary rounded-lg p-8">
+        <h3 class="text-xl font-bold text-accent mb-4 text-center">Uso Real · Últimos 30 Días</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+                <p class="text-4xl font-bold text-white">3.134</p>
+                <p class="text-gray-400 text-sm mt-1">Páginas vistas <span class="text-green-400 font-semibold">+453 %</span></p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold text-white">294</p>
+                <p class="text-gray-400 text-sm mt-1">Visitantes <span class="text-green-400 font-semibold">+352 %</span></p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold text-white">10 %</p>
+                <p class="text-gray-400 text-sm mt-1">Tasa de rebote</p>
+            </div>
+        </div>
+        <p class="text-gray-500 text-xs text-center mt-6">Datos de Vercel Web Analytics en producción, hasta el 24 de septiembre de 2026</p>
+    </div>
+
+    <div class="mt-10 bg-secondary rounded-lg p-8">
+        <h3 class="text-xl font-bold text-accent mb-4 text-center">Funcionalidades Principales</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">📅</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Eventos</h4>
+                    <p class="text-gray-400 text-sm">Crea planes, apúntate y mira quién va antes de salir de casa.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">🍹</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Sistema de Puntos</h4>
+                    <p class="text-gray-400 text-sm">Asistir da puntos, y cada momento de la fiesta también. Todo queda registrado en el evento.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">🏆</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Ranking en Directo</h4>
+                    <p class="text-gray-400 text-sm">Clasificación con podio, histórico y temporadas para empezar de cero.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">⭐</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Perfiles y Niveles</h4>
+                    <p class="text-gray-400 text-sm">Cada 10 puntos subes de nivel, de Principiante a Leyenda. El perfil guarda tus estadísticas de todas las fiestas.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">⚙️</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Panel de Administración</h4>
+                    <p class="text-gray-400 text-sm">Categorías, puntos, niveles y miembros se configuran desde el móvil, sin tocar código.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="text-accent text-2xl">👥</span>
+                <div>
+                    <h4 class="font-semibold text-white mb-1">Multigrupo</h4>
+                    <p class="text-gray-400 text-sm">Cada grupo tiene su código de invitación, sus reglas y su propia liga.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

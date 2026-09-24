@@ -39,6 +39,15 @@ export const projects = [
     finish: true,
   },
   {
+    title: "El Equilibrio",
+    description: "App que convierte las fiestas de un grupo de amigos en una liga con eventos, puntos, ranking y niveles",
+    image: "/img/el-equilibrio/inicio.png",
+    linkExternal: "https://fiestas-equilibrio-roan.vercel.app/",
+    link: "/my-projects/el-equilibrio",
+    icons: ["Next"],
+    finish: true,
+  },
+  {
     title: "Kbre",
     description: "Aplicacion de automatizacion de citas con integracion de whatsapp y google calendar para pequeños negocios y autónomos",
     image: "/img/kbre/login.png",

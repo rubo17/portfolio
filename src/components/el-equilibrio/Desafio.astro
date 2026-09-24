@@ -1,0 +1,73 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Arquitectura Multigrupo
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                La app empezó para un único grupo de amigos, pero se diseñó para que
+                cualquier grupo pudiera tener su propia liga aislada del resto:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Cada grupo con su código de invitación único</li>
+                <li>Datos, eventos y rankings aislados por grupo</li>
+                <li>Roles de administrador y miembro dentro de cada grupo</li>
+                <li>Invitados sin cuenta que también pueden sumar puntos</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Sistema de Puntuación Configurable
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Cada grupo tiene sus propias reglas, así que la puntuación no podía
+                estar escrita en el código. Se modeló como datos editables desde el
+                panel de administración:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Categorías de puntuación con puntos, icono y color personalizables</li>
+                <li>Tipos de categoría: asistencia a evento o acciones agrupadas</li>
+                <li>Niveles calculados automáticamente cada 10 puntos</li>
+                <li>Temporadas para reiniciar la clasificación conservando el histórico</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Acceso sin Fricción
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Para que todo el grupo la usara de verdad, entrar tenía que ser
+                inmediato, sin formularios largos ni verificaciones por email:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Login con nombre y PIN, sin emails</li>
+                <li>Demo pública que crea un grupo de prueba al vuelo</li>
+                <li>Interfaz mobile first pensada para usarse en plena fiesta</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Una Sola App, de Punta a Punta
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                Frontend y backend conviven en un único proyecto Next.js. Con tRPC y
+                Prisma los tipos fluyen desde la base de datos PostgreSQL hasta los
+                componentes de React, de modo que cualquier cambio en el modelo se
+                detecta en tiempo de compilación en toda la aplicación. El resultado
+                está en producción en Vercel y el grupo la usa de verdad: más de
+                3.000 páginas vistas en los últimos 30 días con una tasa de rebote del 10 %.
+            </p>
+        </div>
+    </div>
+</LayoutContent>

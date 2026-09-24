@@ -1,0 +1,116 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import NextIcon from "@components/icons/Next.astro";
+import ReactIcon from "@components/icons/React.astro";
+import TypeScriptIcon from "@components/icons/TypeScript.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import GitIcon from "@components/icons/Git.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+import PrismaIcon from "@components/icons/PrismaIcon.astro";
+import VercelIcon from "@components/icons/VercelIcon.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de El Equilibrio"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={NextIcon}
+                    title="Next.js 16"
+                    subtitle="Framework Full Stack"
+                    description="Framework de React que une frontend y backend en una sola aplicación, con App Router, renderizado en servidor y despliegue optimizado en Vercel."
+                    tags={["App Router", "SSR", "Full Stack"]}
+                />
+
+                <TechnologyCard
+                    icon={ReactIcon}
+                    title="React 19"
+                    subtitle="Biblioteca UI"
+                    description="Biblioteca para construir la interfaz mobile first mediante componentes reutilizables: eventos, ranking, perfiles y panel de administración."
+                />
+
+                <TechnologyCard
+                    icon={TypeScriptIcon}
+                    title="TypeScript"
+                    subtitle="Lenguaje Base"
+                    description="Tipado estático compartido entre cliente y servidor, lo que garantiza que los datos que viajan por la API son siempre coherentes."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS"
+                    subtitle="Estilos"
+                    description="Framework de utilidades CSS para construir una interfaz oscura, moderna y totalmente responsive pensada para el móvil."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    title="tRPC"
+                    subtitle="API Type-Safe"
+                    description="API tipada de extremo a extremo sin necesidad de definir esquemas REST: los tipos del servidor llegan directamente al cliente."
+                    tags={["End-to-end types", "Procedures"]}
+                />
+
+                <TechnologyCard
+                    title="Prisma"
+                    icon={PrismaIcon}
+                    subtitle="ORM"
+                    description="ORM con tipado automático para modelar grupos, miembros, eventos, categorías de puntuación y registros de puntos."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="PostgreSQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Base de datos relacional para almacenar grupos, usuarios, eventos, asistencias, puntos, niveles y temporadas."
+                />
+            </div>
+        </div>
+
+        <!-- Despliegue & Herramientas -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Despliegue y Control de Versiones</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={VercelIcon}
+                    title="Vercel"
+                    subtitle="Hosting y Analytics"
+                    description="Despliegue continuo desde el repositorio y Vercel Web Analytics para medir el uso real de la aplicación en producción."
+                />
+
+                <TechnologyCard
+                    icon={GitIcon}
+                    title="Git"
+                    subtitle="Control de Versiones"
+                    description="Gestión del historial de cambios y ramas de desarrollo durante todo el proyecto."
+                />
+
+                <TechnologyCard
+                    icon={GithubIcon}
+                    title="GitHub"
+                    subtitle="Repositorio Remoto"
+                    description="Plataforma de alojamiento del código conectada a Vercel para desplegar automáticamente cada cambio."
+                />
+            </div>
+        </div>
+    </div>
+</LayoutContent>

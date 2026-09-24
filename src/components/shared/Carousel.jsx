@@ -10,8 +10,9 @@ import { useState } from "react";
 /**
  * @param {Object} props
  * @param {CarouselImage[]} props.images
+ * @param {"cover" | "contain"} [props.fit] - "contain" para capturas verticales que no deben recortarse
  */
-export default function Carousel({ images = [] }) {
+export default function Carousel({ images = [], fit = "cover" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -46,7 +47,7 @@ export default function Carousel({ images = [] }) {
           <img
             src={images[currentIndex].src}
             alt={images[currentIndex].alt || `Imagen ${currentIndex + 1}`}
-            className="w-full h-full object-cover"
+            className={`w-full h-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
           />
 
           {/* Descripción de la imagen */}
@@ -134,7 +135,7 @@ export default function Carousel({ images = [] }) {
             <img
               src={image.src}
               alt={image.alt || `Miniatura ${index + 1}`}
-              className="w-full h-full object-cover"
+              className={`w-full h-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
             />
           </button>
         ))}
