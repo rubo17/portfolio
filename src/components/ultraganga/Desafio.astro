@@ -1,0 +1,73 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+---
+
+<LayoutContent
+    id="desafio"
+    title="El Desafío"
+    description="Retos técnicos y problemáticas resueltas en el desarrollo"
+>
+    <div class="space-y-6">
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Un −60 % que no es un −60 %
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                El precio tachado lo pone la tienda y no siempre es el que tenía de verdad.
+                El Deal Score tenía que ignorarlo y basarse solo en datos propios:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Compara el precio actual con su media de 90 días y su mínimo histórico</li>
+                <li>Tiene en cuenta el precio en otras tiendas</li>
+                <li>Tres rangos claros: Ganga real (85–100), Buen precio (60–84) y Precio normal</li>
+                <li>Implementado como función pura y cubierto con tests</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                De Dónde Salen los Precios
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                Sin historial no hay contexto, así que había que conseguir precios
+                fiables y mantenerlos actualizados:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Importación de feeds CSV y de Awin, con simulación antes de importar</li>
+                <li>Emparejado de productos por ID, URL, EAN o MPN + marca</li>
+                <li>Rastreador propio que revisa precios dos veces al día respetando el robots.txt</li>
+                <li>Cada cambio de precio se guarda para construir el historial</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Afiliación Transparente y Medible
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+                El modelo de negocio es la afiliación. Ya estoy aprobado en el programa de
+                Mibro en Awin y a la espera de más anunciantes:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>Deeplinks automáticos al producto exacto a partir del ID del anunciante</li>
+                <li>Todos los enlaces pasan por /go para medir qué ofertas y páginas generan clics</li>
+                <li>Cada enlace de afiliado está marcado como tal en la web</li>
+            </ul>
+        </div>
+
+        <div class="bg-secondary rounded-lg p-6 border-l-4 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-3">
+                Rumbo a Black Friday
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+                La primera línea de código se escribió el 28 de septiembre y el 1 de octubre
+                ya estaba en producción en mi propio servidor. Es un monolito modular en
+                Next.js, con la lógica de negocio separada de la interfaz, desplegado en un
+                VPS con Docker y Coolify. Durante octubre llegaron el catálogo, el Deal Score,
+                el panel de administración, la importación de feeds, el rastreador, las
+                campañas, las guías y la newsletter. El objetivo: llegar a Black Friday con
+                más tiendas y sus feeds.
+            </p>
+        </div>
+    </div>
+</LayoutContent>

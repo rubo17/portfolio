@@ -1,0 +1,15 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import FormacionCard from "./FormacionCard.astro";
+import { formacion } from "@data/formacion.js";
+---
+
+<LayoutContent id="formacion" title="Formación" description="Mi formación académica">
+  <ol
+    class="relative grid gap-7 pl-10 pt-4
+    before:absolute before:left-[9px] before:top-10 before:bottom-2 before:w-0.5 before:rounded
+    before:bg-gradient-to-b before:from-accent before:via-gray-700 before:to-gray-700"
+  >
+    {formacion.map((item, index) => <FormacionCard {...item} index={index} />)}
+  </ol>
+</LayoutContent>

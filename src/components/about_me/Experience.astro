@@ -1,32 +1,33 @@
 ---
     import LayoutContent from "@components/LayoutContent.astro";
+    import ExperienceCard from "./ExperienceCard.astro";
 ---
 
-<LayoutContent id="experiencia" title="Experience" description="Mi experiencia como desarrollador">
+<LayoutContent id="experiencia" title="Experiencia" description="Mi experiencia como desarrollador">
   <div class="flex flex-col gap-6">
-    <div class="flex flex-col sm:flex-row items-stretch gap-4 sm:gap-10 w-full p-4">
-      <div class="flex flex-col items-center sm:items-start w-full sm:w-1/3 space-y-2  sm:justify-start">
-        <p class="text-xs text-accent font-semibold sm:mb-2">Marzo 2025 - Junio 2025</p>
-        <img class="w-16 h-16 rounded-full shadow mb-2" src="/aiudo.png" alt="Logo Aiudo">
-      </div>
-      <div class=" flex flex-col space-y-2 text-center sm:text-left  justify-start">
-        <div class="flex flex-col sm:flex-row sm:items-start sm:space-x-4">
-          <h2 class="text-lg font-bold">Desarrollador Fullstack</h2>
-        </div>
-        <div class="space-y-4">
-          <p class="text-base text-primaryText/90">
-              Durante mi etapa en <span class="font-semibold text-accent">Aiudo</span>, desarrollé el frontend de la página de cursos de formación de la empresa utilizando Next.js, mejorando la experiencia de usuario y facilitando el acceso a los contenidos formativos para los empleados.
-          </p>
-          <p class="text-base text-primaryText/90">
-              Además, colaboré en la implementación de nuevas funcionalidades en el ERP de la empresa, como la creación de un calendario para gestionar las vacaciones y otras gestiones internas, utilizando Vue y Laravel para el desarrollo de estas herramientas.
-          </p>
-          <p class="text-base text-primaryText/90">
-              Estas experiencias me permitieron trabajar con tecnologías modernas y aportar soluciones que optimizaron los procesos internos y la gestión del equipo.
-          </p>
-        </div>
-        
-      </div>
-    </div>
-    
+      <ExperienceCard image="mel.png" dates=" Octubre 2026 - Actualmente" title="Desarrollador Web (Prácticas)">
+      <p>
+        Realizando actualmente prácticas en <span class="font-semibold text-accent">Mel Comunicació</span>, una agencia donde desarrollo páginas web para restaurantes, particulares y pequeños negocios utilizando WordPress, JavaScript y PHP.
+      </p>
+      <p>
+        Participé en todo el ciclo de cada proyecto: desde las primeras reuniones para escuchar las necesidades del cliente y definir qué esperaba de su web, pasando por el diseño y la maquetación, hasta el desarrollo, los ajustes finales y la entrega.
+      </p>
+      <p>
+         Lo que me estoy llevando de esto es a traducir lo que pide el usuario en soluciones concretas y a llevar un proyecto real de principio a fin.
+      </p>
+    </ExperienceCard>
+    <ExperienceCard image="/aiudo.png" dates="Marzo 2025 - Junio 2025" title="Desarrollador Fullstack">
+      <p>
+        Durante mi etapa en <span class="font-semibold text-accent">Aiudo</span>, desarrollé el frontend de la página de cursos de formación de la empresa utilizando Next.js, mejorando la experiencia de usuario y facilitando el acceso a los contenidos formativos para los empleados.
+      </p>
+      <p>
+        Además, colaboré en la implementación de nuevas funcionalidades en el ERP de la empresa, como la creación de un calendario para gestionar las vacaciones y otras gestiones internas, utilizando Vue y Laravel para el desarrollo de estas herramientas.
+      </p>
+      <p>
+        Estas experiencias me permitieron trabajar con tecnologías modernas y aportar soluciones que optimizaron los procesos internos y la gestión del equipo.
+      </p>
+    </ExperienceCard>
+ 
+
   </div>
 </LayoutContent>

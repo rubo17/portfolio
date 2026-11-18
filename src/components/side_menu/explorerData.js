@@ -16,6 +16,7 @@ export const explorerItems = [
             children: [
               { type: "file", name: "sobre-mi", url: "/#sobre-mi" },
               { type: "file", name: "experiencia", url: "/#experiencia" },
+              { type: "file", name: "formacion", url: "/#formacion" },
               { type: "file", name: "habilidades", url: "/#habilidades" },
               { type: "file", name: "proyectos", url: "/#proyectos" },
               { type: "file", name: "contacto", url: "/#contacto" },
@@ -78,6 +79,15 @@ export const explorerItems = [
                   { type: "file", name: "acerca", url: "/my-projects/el-equilibrio/#acerca", id: "el-equilibrio/acerca" },
                   { type: "file", name: "tecnologias", url: "/my-projects/el-equilibrio/#tecnologias", id: "el-equilibrio/tecnologias" },
                   { type: "file", name: "desafio", url: "/my-projects/el-equilibrio/#desafio", id: "el-equilibrio/desafio" },
+                ],
+              },{
+                type: "folder",
+                name: "ultraganga",
+                open: false,
+                children: [
+                  { type: "file", name: "acerca", url: "/my-projects/ultraganga/#acerca", id: "ultraganga/acerca" },
+                  { type: "file", name: "tecnologias", url: "/my-projects/ultraganga/#tecnologias", id: "ultraganga/tecnologias" },
+                  { type: "file", name: "desafio", url: "/my-projects/ultraganga/#desafio", id: "ultraganga/desafio" },
                 ],
               },
             ],

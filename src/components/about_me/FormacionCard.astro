@@ -1,0 +1,79 @@
+---
+import GraduationIcon from "@components/icons/GraduationIcon.astro";
+import BuildingIcon from "@components/icons/BuildingIcon.astro";
+
+export interface FormacionCardProps {
+  nivel: string;
+  titulo: string;
+  siglas?: string;
+  centro: string;
+  periodo?: string;
+  actual?: boolean;
+  descripcion: string;
+  tags?: string[];
+  index?: number;
+}
+
+const { nivel, titulo, siglas, centro, periodo, actual = false, descripcion, tags = [], index = 0 } = Astro.props;
+---
+
+<li
+  class="relative group opacity-0 animate-fade-up motion-reduce:animate-none motion-reduce:opacity-100"
+  style={`animation-delay: ${index * 120}ms`}
+>
+  <!-- Nodo del timeline -->
+  <span
+    aria-hidden="true"
+    class:list={[
+      "absolute -left-10 top-6 w-5 h-5 rounded-full border-2 transition-colors duration-300",
+      actual
+        ? "bg-accent border-accent shadow-[0_0_0_4px_#1F1F1F,0_0_18px_rgba(127,219,255,0.6)]"
+        : "bg-secondary border-gray-600 group-hover:border-accent",
+    ]}
+  >
+    {actual && <span class="absolute -inset-0.5 rounded-full border-2 border-accent animate-ping motion-reduce:animate-none"></span>}
+  </span>
+
+  <article
+    class:list={[
+      "p-5 sm:p-7 rounded-2xl border transition-all duration-300",
+      "group-hover:translate-x-1.5 group-hover:border-accent/40 group-hover:shadow-[0_10px_30px_-15px_rgba(127,219,255,0.25)]",
+      actual ? "bg-gradient-to-br from-accent/10 via-main to-main border-accent/50" : "bg-main border-white/5",
+    ]}
+  >
+    <header class="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide text-accent bg-accent/10">
+        <GraduationIcon class="w-3.5 h-3.5" />
+        {nivel}
+      </span>
+      {periodo && (
+        <span class:list={["inline-flex items-center gap-2 text-sm font-semibold", actual ? "text-accent" : "text-primaryText/70"]}>
+          {actual && <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>}
+          {periodo}
+        </span>
+      )}
+    </header>
+
+    <h3 class="flex flex-wrap items-baseline gap-2.5 mb-1.5 text-xl sm:text-2xl font-bold text-primaryText">
+      {titulo}
+      {siglas && (
+        <span class="text-sm font-bold px-2 py-0.5 rounded-md border border-gray-600 text-primaryText/70">{siglas}</span>
+      )}
+    </h3>
+
+    <p class="inline-flex items-center gap-1.5 mb-4 font-semibold text-accent">
+      <BuildingIcon class="w-4 h-4" />
+      {centro}
+    </p>
+
+    <p class="text-base leading-relaxed text-primaryText/90">{descripcion}</p>
+
+    {tags.length > 0 && (
+      <ul class="flex flex-wrap gap-2 mt-5">
+        {tags.map((tag) => (
+          <li class="px-3 py-1 rounded-md text-xs text-primaryText/70 bg-secondary border border-white/10">{tag}</li>
+        ))}
+      </ul>
+    )}
+  </article>
+</li>

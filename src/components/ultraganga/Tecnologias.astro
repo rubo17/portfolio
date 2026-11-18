@@ -1,0 +1,140 @@
+---
+import LayoutContent from "@components/LayoutContent.astro";
+import TechnologyCard from "@components/shared/TechnologyCard.astro";
+import NextIcon from "@components/icons/Next.astro";
+import ReactIcon from "@components/icons/React.astro";
+import TypeScriptIcon from "@components/icons/TypeScript.astro";
+import TailwindIcon from "@components/icons/TailwindIcon.astro";
+import SqlIcon from "@components/icons/Sql.astro";
+import PrismaIcon from "@components/icons/PrismaIcon.astro";
+import DockerIcon from "@components/icons/Docker.astro";
+import GitIcon from "@components/icons/Git.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+---
+
+<LayoutContent
+    id="tecnologias"
+    title="Stack Tecnológico"
+    description="Tecnologías utilizadas en el desarrollo de UltraGanga"
+>
+    <div class="space-y-8">
+        <!-- Frontend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Frontend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={NextIcon}
+                    title="Next.js 16"
+                    subtitle="Framework Full Stack"
+                    description="Frontend y backend en una sola aplicación, con renderizado en servidor para que las fichas de producto y las ofertas carguen rápido y se indexen bien."
+                    tags={["App Router", "SSR", "SEO"]}
+                />
+
+                <TechnologyCard
+                    icon={ReactIcon}
+                    title="React 19"
+                    subtitle="Biblioteca UI"
+                    description="Componentes reutilizables para el catálogo, las fichas de producto, el historial de precios y el panel de administración."
+                />
+
+                <TechnologyCard
+                    icon={TypeScriptIcon}
+                    title="TypeScript"
+                    subtitle="Lenguaje Base"
+                    description="Tipado estático en toda la aplicación, desde el modelo de datos hasta el cálculo del Deal Score."
+                />
+
+                <TechnologyCard
+                    icon={TailwindIcon}
+                    title="Tailwind CSS v4"
+                    subtitle="Estilos"
+                    description="Interfaz propia, responsive y con modo claro y oscuro, construida con utilidades CSS."
+                />
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Backend</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={PrismaIcon}
+                    title="Prisma 7"
+                    subtitle="ORM"
+                    description="ORM tipado para modelar productos, tiendas, ofertas, historial de precios, campañas y clics de afiliado."
+                />
+
+                <TechnologyCard
+                    title="Better Auth"
+                    subtitle="Autenticación"
+                    description="Autenticación del panel de administración para proteger la gestión del catálogo."
+                />
+
+                <TechnologyCard
+                    title="Resend"
+                    subtitle="Email"
+                    description="Envío de emails transaccionales y de la newsletter de ofertas."
+                />
+
+                <TechnologyCard
+                    title="Bun"
+                    subtitle="Runtime y Gestor de Paquetes"
+                    description="Runtime de JavaScript rápido para instalar dependencias y ejecutar scripts y tareas del proyecto."
+                />
+            </div>
+        </div>
+
+        <!-- Base de Datos -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Base de Datos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={SqlIcon}
+                    title="PostgreSQL"
+                    subtitle="Base de Datos Relacional"
+                    description="Almacena el catálogo completo y cada cambio de precio, la base sobre la que se calcula el Deal Score."
+                />
+
+                <TechnologyCard
+                    title="Redis"
+                    subtitle="Caché"
+                    description="Caché en memoria para servir rápido las páginas y consultas más visitadas."
+                />
+            </div>
+        </div>
+
+        <!-- Despliegue & Herramientas -->
+        <div>
+            <h3 class="text-xl font-bold text-accent mb-4">Despliegue y Control de Versiones</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TechnologyCard
+                    icon={DockerIcon}
+                    title="Docker"
+                    subtitle="Contenedores"
+                    description="La aplicación y sus servicios corren en contenedores, con el mismo entorno en desarrollo y producción."
+                />
+
+                <TechnologyCard
+                    title="Coolify"
+                    subtitle="Despliegue en VPS propio"
+                    description="Plataforma self-hosted para desplegar en mi propio VPS, sin depender de Vercel."
+                    tags={["Self-hosted", "VPS"]}
+                />
+
+                <TechnologyCard
+                    icon={GitIcon}
+                    title="Git"
+                    subtitle="Control de Versiones"
+                    description="Gestión del historial de cambios y ramas de desarrollo durante todo el proyecto."
+                />
+
+                <TechnologyCard
+                    icon={GithubIcon}
+                    title="GitHub"
+                    subtitle="Repositorio Remoto"
+                    description="Alojamiento del código conectado a Coolify para desplegar cada cambio."
+                />
+            </div>
+        </div>
+    </div>
+</LayoutContent>

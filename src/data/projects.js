@@ -3,12 +3,30 @@
 // `icons` son nombres de string que se resuelven a componentes de icono en cada contexto.
 export const projects = [
   {
+    title: "UltraGanga",
+    description: "Web de ofertas de tecnología y hogar que te dice con un Deal Score si un descuento es real o solo lo parece",
+    image: "/img/ultraganga/home.png",
+    linkExternal: "https://ultraganga.com",
+    link: "/my-projects/ultraganga",
+    icons: ["Next"],
+    finish: false,
+  },
+  {
     title: "Barber Time",
     description: "Proyecto para automatizar citas de barberos",
     image: "/barbertime.png",
     linkExternal: "https://app.barbertime.es/",
     link: "/my-projects/barbertime",
     icons: ["Nuxt", "Laravel"],
+    finish: true,
+  },
+    {
+    title: "El Equilibrio",
+    description: "App que convierte las fiestas de un grupo de amigos en una liga con eventos, puntos, ranking y niveles",
+    image: "/img/el-equilibrio/inicio.png",
+    linkExternal: "https://fiestas-equilibrio-roan.vercel.app/",
+    link: "/my-projects/el-equilibrio",
+    icons: ["Next"],
     finish: true,
   },
   {
@@ -36,15 +54,6 @@ export const projects = [
     linkExternal: "https://habitcore.es",
     link: "/my-projects/habitcore",
     icons: ["Vue", "Laravel"],
-    finish: true,
-  },
-  {
-    title: "El Equilibrio",
-    description: "App que convierte las fiestas de un grupo de amigos en una liga con eventos, puntos, ranking y niveles",
-    image: "/img/el-equilibrio/inicio.png",
-    linkExternal: "https://fiestas-equilibrio-roan.vercel.app/",
-    link: "/my-projects/el-equilibrio",
-    icons: ["Next"],
     finish: true,
   },
   {
