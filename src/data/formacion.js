@@ -3,13 +3,13 @@
 export const formacion = [
   {
     nivel: "Máster",
-    titulo: "Máster en Product Engineering",
-    centro: "Envolve",
+    titulo: "Máster en Product Engineering & IA",
+    centro: "Evolve",
     periodo: "En curso",
     actual: true,
     descripcion:
-      "Formación orientada a construir producto de principio a fin: desde entender el problema del usuario hasta diseñar, desarrollar y lanzar soluciones con impacto real.",
-    tags: ["Producto", "Ingeniería", "UX"],
+      "Aprendo a llevar una idea de negocio hasta producción con criterio de producto, integrando IA (agentes, RAG, MCPs y LLMs) con control de coste y calidad. Todo con profesionales en activo y un proyecto final con una empresa real.",
+    tags: ["Producto", "IA aplicada", "Agentes y RAG"],
   },
   {
     nivel: "Grado Superior",
